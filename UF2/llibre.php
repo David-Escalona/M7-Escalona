@@ -2,8 +2,8 @@
 
     class Llibre {
         
-        public string $titol;
-        public string $autor;
+        public string $titol = "Don Xicote de la Mancha";
+        public string $autor = "Miguelito";
 
         public function descripcio(): string {
 
