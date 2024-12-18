@@ -24,6 +24,7 @@ echo $llibre->descripcio();
 
 
     class Persona {
+
         public string $nom;
         public int $edad;
 
@@ -38,6 +39,7 @@ echo $llibre->descripcio();
 }
 
     class Producte {
+
         public string $nom;
         public int $preu;
 
@@ -51,6 +53,24 @@ echo $llibre->descripcio();
     }
 }
 
+    class Calculadora {
+
+        public function sumar(){
+
+        }
+
+        public function restar(){
+            
+        }
+
+        public function multiplicar(){
+
+        }
+
+        public function dividir(){
+            
+        }
+}
 
 ?>
 
