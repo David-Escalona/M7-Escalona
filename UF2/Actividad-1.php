@@ -23,3 +23,15 @@
 
 $llibre = new Llibre("Don Quijote de la Mancha", "Miguel de Cervantes");
 echo $llibre->descripcio();
+
+
+    class Persona {
+    
+        public string $nom = "Anna";
+        public int $edad = 25;
+
+        public function saludar(){
+            return "Hola soy " . $this->nom . " y tengo " . $this->edad . " años.";
+        }
+
+    }
