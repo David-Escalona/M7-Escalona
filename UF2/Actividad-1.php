@@ -1,75 +1,71 @@
 <?php
 
-    class Llibre {
+class Llibre {
 
-        public string $titol;
-        public string $autor;
+    public string $titol;
+    public string $autor;
 
-        public function __construct(string $titol = "Don Xicote de la Mancha", string $autor = "Miguelito") {
-            $this->titol = $titol;
-            $this->autor = $autor;
-        }
+    public function __construct(string $titol = "Don Xicote de la Mancha", string $autor = "Miguelito") {
+        $this->titol = $titol;
+        $this->autor = $autor;
+    }
 
-        public function descripcio(): string {
-            return "El libro " . $this->titol . " ha sido escrito por: " . $this->autor . ".";
-        }
+    public function descripcio(): string {
+        return "El libro " . $this->titol . " ha sido escrito por: " . $this->autor . ".";
+    }
 
-        public function getAutor() {
-            echo "El autor es " . $this->autor;
+    public function getAutor() {
+        echo "El autor es " . $this->autor;
     }
 }
 
-$llibre = new Llibre("Don Xicote de la Mancha", "Miguelito");
-echo $llibre->descripcio();
+class Persona {
 
+    public string $nom;
+    public int $edad;
 
-    class Persona {
+    public function __construct(string $nom = "Anna", int $edad = 25) {
+        $this->nom = $nom;
+        $this->edad = $edad;
+    }
 
-        public string $nom;
-        public int $edad;
-
-        public function __construct(string $nom = "Anna", int $edad = 25) {
-            $this->nom = $nom;
-            $this->edad = $edad;
-        }
-
-        public function saludar(): string {
-            return "Hola, soy " . $this->nom . " y tengo " . $this->edad . " años.";
+    public function saludar(): string {
+        return "Hola, soy " . $this->nom . " y tengo " . $this->edad . " años.";
     }
 }
 
-    class Producte {
+class Producte {
 
-        public string $nom;
-        public int $preu;
+    public string $nom;
+    public int $preu;
 
-        public function __construct(string $nom = "David", int $preu = 2000000000) {
-            $this->nom = $nom;
-            $this->preu = $preu;
-        }
+    public function __construct(string $nom = "David", int $preu = 2000000000) {
+        $this->nom = $nom;
+        $this->preu = $preu;
+    }
 
-        public function mostrarPreu(): string {
-            return "Hola, soy " . $this->nom . " y mi casa vale " . $this->preu . " euros.";
+    public function mostrarPreu(): string {
+        return "El producte " . $this->nom . " té un preu de " . $this->preu . " euros.";
     }
 }
 
-    class Calculadora {
+class Calculadora {
 
-        public function sumar(){
+    public function sumar(){
 
-        }
+    }
 
-        public function restar(){
-            
-        }
+    public function restar(){
+        
+    }
 
-        public function multiplicar(){
+    public function multiplicar(){
 
-        }
+    }
 
-        public function dividir(){
-            
-        }
+    public function dividir(){
+        
+    }
 }
 
 ?>
@@ -80,6 +76,21 @@ echo $llibre->descripcio();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interacció HTML i PHP</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <h1>Formulari de Persona</h1>
@@ -94,18 +105,38 @@ echo $llibre->descripcio();
     </form>
 
     <?php
-    // Processar el formulari
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = htmlspecialchars($_POST['nom']);
         $edat = intval($_POST['edat']);
 
-        // Creem una instància de la classe Persona
         $persona = new Persona($nom, $edat);
 
-        // Mostrem la informació de la persona
         echo "<h2>Resultat:</h2>";
         echo "<p>" . $persona->saludar() . "</p>";
     }
+
+    // Crear una llista d'objectes Producte
+    $productes = [
+        new Producte("Ordinador", 800),
+        new Producte("Mòbil", 600),
+        new Producte("Tablet", 300),
+        new Producte("Auriculars", 50)
+    ];
+
+    // Mostrar els productes en una taula
+    echo "<h2>Llista de Productes</h2>";
+    echo "<table>";
+    echo "<tr><th>Nom del Producte</th><th>Preu (€)</th></tr>";
+
+    foreach ($productes as $producte) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($producte->nom) . "</td>";
+        echo "<td>" . htmlspecialchars($producte->preu) . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
     ?>
 </body>
 </html>
+
