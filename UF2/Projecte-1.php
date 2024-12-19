@@ -16,6 +16,40 @@
             $this->habilitat = $habilitat;
         }
 
-    }
+        public function rebredany ($dany){
+
+        }
+
+        public function atacar ($objectiu){
+            
+        }
+
+        public function activarHabilitat (){
+            
+        }
+}
+        
+        $gormiti1 = New Gormiti("Gormiti1", 100, 20, 20, "Habilidad1");
+        $gormiti2 = New Gormiti("Gormiti2", 120, 10, 10, "Habilidad2");
+
+
+    class Jugador{
+
+        public string $nom;
+        public string $gormiti;
+
+        public function __construct(string $nom) {
+            $this->nom = $nom;
+        }
+
+        public function seleccionarGormiti ($gormiti){
+
+        }
+
+        public function realitzarAccio($accio, $objectiu){
+            
+        }
+
+}
 
 ?>
