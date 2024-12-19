@@ -11,6 +11,7 @@
     }
 }
 
+
     class Persona {
 
         public string $nom;
@@ -44,4 +45,50 @@
 
         $personaTipatge->actualitzar("David Escalona Garcia", 40);
         echo $personaTipatge->descriure();
+
+
+    class Calculadora {
+
+        public function sumar(int $a, int $b): int {
+        return $a + $b;
+    }
+}
+        $calculadora = new Calculadora();
+        echo $calculadora->sumar(68, 1);
+
 ?>
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacció HTML i Classe Persona</title>
+</head>
+<body>
+    <h1>Formulari de Persona</h1>
+    <form method="POST" action="">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="edat">Edat:</label>
+        <input type="number" id="edat" name="edat" required><br><br>
+
+        <button type="submit">Crear Persona</button>
+    </form>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom']) && isset($_POST['edat'])) {
+        $nom = htmlspecialchars($_POST['nom']);
+        $edat = intval($_POST['edat']);
+
+        // Crear l'objecte Persona amb els valors del formulari
+        $persona = new Persona($nom, $edat);
+
+        echo "<h2>Descripció de la Persona</h2>";
+        echo "<p>" . $persona->descriure() . "</p>";
+    }
+    ?>
+    
+</body>
+</html>
