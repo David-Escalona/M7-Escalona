@@ -47,9 +47,39 @@
         }
 
         public function realitzarAccio($accio, $objectiu){
-            
+
         }
 
 }
+
+    class Joc{
+
+        public string $jugador;
+        public string $tornActual;
+        public string $estatJoc;
+        
+        public function __construct(string $jugador, string $tornActual, string $estatJoc) {
+            $this->jugador = $jugador;
+            $this->tornActual = $tornActual;
+            $this->estatJoc = $estatJoc;
+        }
+
+        public function afegirJugador ($jugador){
+
+        }
+
+        public function iniciarPartida(){
+            
+        }
+
+        public function processarTorn($jugador, $accio, $objectiu){
+
+        }
+
+        public function comprovarGuanyador(){
+
+        }
+
+    }
 
 ?>
