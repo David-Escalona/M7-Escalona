@@ -56,6 +56,18 @@
         $calculadora = new Calculadora();
         echo $calculadora->sumar(68, 1);
 
+
+    class Animal {
+
+        public string $nom;
+        public int $tipus;
+    
+        public function __construct(string $nom, int $tipus) {
+            $this->nom = $nom;
+             $this->tipus = $tipus;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +101,6 @@
         echo "<p>" . $persona->descriure() . "</p>";
     }
     ?>
-    
+
 </body>
 </html>
