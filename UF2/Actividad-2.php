@@ -75,6 +75,24 @@
         $animal = new Animal("animal", "Elefante");
         echo $animal->saludar();
         
+
+    class Producte {
+
+        public string $nom;
+        public int $preu;
+            
+        public function __construct(string $nom, string $preu) {
+            $this->nom = $nom;
+            $this->preu = $preu;
+    }
+}
+        $productes = [
+            new Producte("Cafetera", 50),
+            new Producte("Televisor", 300),
+            new Producte("Telèfon mòbil", 200),
+            new Producte("Portàtil", 600)
+        ];
+
 ?>
 
 <!DOCTYPE html>
@@ -85,6 +103,29 @@
     <title>Interacció HTML i Classe Persona</title>
 </head>
 <body>
+
+    <h1>Llista de Productes</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Preu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Mostrar els productes en una taula HTML
+            foreach ($productes as $producte) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($producte->nom) . "</td>";
+                echo "<td>" . htmlspecialchars($producte->preu) . " euros</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
     <h1>Formulari de Persona</h1>
     <form method="POST" action="">
         <label for="nom">Nom:</label>
