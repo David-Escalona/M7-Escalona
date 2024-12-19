@@ -21,11 +21,20 @@
             $this->edat = $edat;
         }
 
+        public function persona(string $nom, int $edat): void {
+            $this->nom = $nom;
+            $this->edat = $edat;
+        }
+
         public function descriure(): string {
         return "Hola, me llamo " . $this->nom . " y tengo " . $this->edat . " años.";
     }
 }
         $persona = new Persona("David", "20");
         echo $persona->descriure();
+
+        $personaTipatge = new Persona("", 0);
+        $personaTipatge->persona("David", 20);
+        echo $personaTipatge->descriure();
 
 ?>
