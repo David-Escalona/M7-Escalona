@@ -68,6 +68,21 @@ class Calculadora {
     }
 }
 
+class Animal {
+
+    public string $nom;
+    public string $tipus;
+
+    public function __construct(string $nom = "León", string $tipus = "Carnivoro") {
+        $this->nom = $nom;
+        $this->tipus = $tipus;
+    }
+
+    public function descriure(): string {
+        return "Aquest és un animal de tipus " . htmlspecialchars($this->tipus) . " anomenat " . htmlspecialchars($this->nom) . ".";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +120,7 @@ class Calculadora {
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom']) && isset($_POST['edat'])) {
         $nom = htmlspecialchars($_POST['nom']);
         $edat = intval($_POST['edat']);
 
@@ -137,6 +152,28 @@ class Calculadora {
 
     echo "</table>";
     ?>
+
+    <h1>Formulari d'Animal</h1>
+    <form method="POST" action="">
+        <label for="animal_nom">Nom de l'Animal:</label>
+        <input type="text" id="animal_nom" name="animal_nom" required><br><br>
+
+        <label for="animal_tipus">Tipus d'Animal:</label>
+        <input type="text" id="animal_tipus" name="animal_tipus" required><br><br>
+
+        <button type="submit">Crear Animal</button>
+    </form>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['animal_nom']) && isset($_POST['animal_tipus'])) {
+        $animalNom = htmlspecialchars($_POST['animal_nom']);
+        $animalTipus = htmlspecialchars($_POST['animal_tipus']);
+
+        $animal = new Animal($animalNom, $animalTipus);
+
+        echo "<h2>Descripció de l'Animal:</h2>";
+        echo "<p>" . $animal->descriure() . "</p>";
+    }
+    ?>
 </body>
 </html>
-
