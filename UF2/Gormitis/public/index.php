@@ -1,7 +1,7 @@
 <?php
 
-include '../src/config/config.php';
-include '../src/classes/Gormiti.php';
+include '../../Gormitis/src/config/config.php';
+include '../../Gormitis/src/classes/Gormiti.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['nom']) && !empty($_POST['salut']) && !empty($_POST['dany']) && !empty($_POST['imatge']) && !empty($_POST['habilitats'])) {
