@@ -96,7 +96,7 @@ $libro = new Libro($titulo, $autor, $publicacion, $foto);
                     <label for="foto" class="form-label">URL de la Foto</label>
                     <input type="url" class="form-control" id="foto" name="foto" required>
                 </div>
-                <button type="submit" name="afegir" class="btn btn-primary border border-dark rounded-circle">Añadir libro</button>
+                <button type="submit" name="afegir" class="btn btn-primary border border-dark rounded-circle mb-5">Añadir libro</button>
             </form>
         </div>
     </div>
