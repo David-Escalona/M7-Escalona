@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ // Si la solicitud llega al servidor 
 </head>
 <body class="bg-light">
     <div class="container py-5">
-        <h1 class="text-center mb-4">Gestió de Biblioteca</h1>
+        <h1 class="text-center mb-4">Gestión de Biblioteca</h1>
     </div>
 
     <div class="card mb-2 bg-dark border border-dark rounded container d-flex flex-row">
