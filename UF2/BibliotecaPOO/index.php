@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ // Si la solicitud llega al servidor 
                     <label for="foto" class="form-label">URL de la Foto</label>
                     <input type="url" class="form-control" id="foto" name="foto" required>
                 </div>
-                <button type="submit" name="afegir" class="btn btn-primary border border-dark mb-5">Añadir libro</button>
+                <button type="submit" name="añadir" class="btn btn-primary border border-dark mb-5">Añadir libro</button>
             </form>
         </div>
 
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ // Si la solicitud llega al servidor 
                     <label for="titulo" class="form-label">Titulo</label>
                     <input type="text" class="form-control" id="titulo" name="titulo">
                 </div>
-                <button type="submit" name="cercar" class="btn btn-primary border border-dark mb-5">Buscar libro</button>
+                <button type="submit" name="buscar" class="btn btn-primary border border-dark mb-5">Buscar libro</button>
             </form>
         </div>
     </div>
