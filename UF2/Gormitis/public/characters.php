@@ -39,7 +39,7 @@ include '../src/classes/Gormiti.php';
         if (isset($_SESSION['personatges']) && count($_SESSION['personatges']) > 0) {
             foreach ($_SESSION['personatges'] as $gormiti) {
                 // Cada tarjeta ocupará 4 columnas en una fila de 12 columnas, lo que da 3 elementos por fila.
-                echo "<div class='col-md-4 mb-4'>
+                echo "<div class='col-md-4 mb-24'>
                         <div class='card' style='width: 100%;'>
                             <img src='" . $gormiti->imatge . "' class='card-img-top' alt='Imatge del personatge'>
                             <div class='card-body'>
@@ -52,7 +52,7 @@ include '../src/classes/Gormiti.php';
                     </div>";
             }
         } else {
-            echo "<p>No hi ha personatges creats.</p>";
+            echo "<p class='letratitulo fs-3'>No hi ha personatges creats.</p>";
         }
         ?>
     </div>
