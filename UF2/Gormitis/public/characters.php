@@ -2,8 +2,11 @@
 
 session_start(); // Iniciar la sesión para acceder a los datos
 
-include '../src/config/config.php';
-include '../src/classes/Gormiti.php';
+include_once '../src/config/config.php';
+include_once '../src/classes/Gormiti.php';
+
+$personatges = Gormiti::obtenerPersonatges(); // Obtener personajes desde la clase Gormiti
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ include '../src/classes/Gormiti.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     <title>Selecció de Personatges</title>
     <style>
@@ -35,15 +38,13 @@ include '../src/classes/Gormiti.php';
 <div class="container card">
     <div class="row m-5">
         <?php
-        // Verificar si existen personajes en la sesión
-        if (isset($_SESSION['personatges']) && count($_SESSION['personatges']) > 0) {
-            foreach ($_SESSION['personatges'] as $gormiti) {
-                // Cada tarjeta ocupará 4 columnas en una fila de 12 columnas, lo que da 3 elementos por fila.
-                echo "<div class='col-md-4 mb-24'>
+        if (count($personatges) > 0) {
+            foreach ($personatges as $gormiti) {
+                echo "<div class='col-md-4 mb-4'>
                         <div class='card' style='width: 100%;'>
-                            <img src='" . $gormiti->imatge . "' class='card-img-top' alt='Imatge del personatge'>
+                            <img src='" . htmlspecialchars($gormiti->imatge) . "' class='card-img-top' alt='Imatge del personatge'>
                             <div class='card-body'>
-                                <h5 class='card-title letratitulo'>" . htmlspecialchars($gormiti->nom) . "</h5>
+                                <p class='card-text letratitulo'>Nom: " . htmlspecialchars($gormiti->nom) . "</p>
                                 <p class='card-text letratitulo'>Salut: " . htmlspecialchars($gormiti->salut) . "</p>
                                 <p class='card-text letratitulo'>Dany: " . htmlspecialchars($gormiti->dany) . "</p>
                                 <p class='card-text letratitulo'>Habilitats: " . htmlspecialchars($gormiti->habilitats) . "</p>
@@ -65,3 +66,4 @@ include '../src/classes/Gormiti.php';
 
 </body>
 </html>
+

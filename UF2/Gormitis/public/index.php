@@ -2,8 +2,25 @@
 
 session_start(); // Iniciar la sesión para almacenar los datos
 
-include '../src/config/config.php';
-include '../src/classes/Gormiti.php';
+include_once '../src/config/config.php';
+include_once '../src/classes/Gormiti.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['añadir'])) {
+        // Recoger los datos del formulario
+        $nom = $_POST['nom'];
+        $salut = $_POST['salut'];
+        $dany = $_POST['dany'];
+        $imatge = $_POST['imatge'];
+        $habilitats = $_POST['habilitats'];
+
+        // Crear un nuevo personaje
+        $novaPersona = new Gormiti($nom, $salut, $dany, $imatge, $habilitats);
+
+        // Usar el método de la clase para agregar el personaje
+        Gormiti::agregarPersonatge($novaPersona);
+    }
+}
 
 ?>
 
@@ -12,7 +29,7 @@ include '../src/classes/Gormiti.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     <title>Crear Personatge</title>
     <style>
@@ -51,9 +68,8 @@ include '../src/classes/Gormiti.php';
         <input type="text" class="shadow border" name="habilitats" id="habilitats" required><br><br>
 
         <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="letratitulo shadow border p-3 color w-100 d-flex justify-content-center fs-4">Crear Personatge</button>
+            <button type="submit" name="añadir" class="letratitulo shadow border p-3 color w-100 d-flex justify-content-center fs-4">Crear Personatge</button>
         </div>
-        
     </form>
 </div>
 
@@ -64,3 +80,5 @@ include '../src/classes/Gormiti.php';
 
 </body>
 </html>
+
+
