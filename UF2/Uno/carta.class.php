@@ -16,6 +16,8 @@
 
         public function pinta_carta(){
 
+            return "<img src='cartas_uno/{$this->palo}_{$this->numero}.png' alt='{$this->palo} {$this->numero}' />";
+
         }
 
         public function pinta_carta_link(){

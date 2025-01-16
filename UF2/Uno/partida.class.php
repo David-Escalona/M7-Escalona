@@ -1,11 +1,13 @@
 <?php
 
+    include 'baraja.class.php';
 
-
+    $baraja = new Baraja();
+    $carta = $baraja->obtenerCartaAleatoria();  
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,34 +19,43 @@
     <title>Partidas</title>
 
     <style>
-        h1, h5, label{
+        h1, h5, label {
             font-family: Bungee Spice;
         }
+
+        .carta {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            background-size: cover;
+
+        }
+        
     </style>
 
 </head>
 <body>
     
     <header>
-
         <h1 class="d-flex justify-content-center mt-5">Partida</h1>
-    
     </header>
 
+    <main class="d-flex justify-content-center container card mb-4 flex-row">
 
-    <main>
+        <div class="carta shadow">
+            <img src="img/<?php echo $carta; ?>" alt="Carta">
+        </div>
 
     </main>
 
-
     <footer>
-
         <div class="container card color p-2">
             <a href="index.php" class="d-flex justify-content-center text-decoration-none fs-5 w-100 ">Volver al inicio</a>   
         </div>
-
     </footer>
-
 
 </body>
 </html>
