@@ -1,0 +1,22 @@
+body{
+    background: #8E0E00;
+    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); 
+    background: linear-gradient(to right, #1F1C18, #8E0E00);
+}
+
+.formu{
+    background: #ECE9E6; 
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); 
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); 
+}
+
+button, .color{
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    background: linear-gradient(to right, #414345, #232526);
+}
+
+a{
+    color: white;
+    font-family:Arial;
+}
