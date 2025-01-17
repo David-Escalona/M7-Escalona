@@ -26,6 +26,7 @@
     <header>
 
     <h1 class="d-flex justify-content-center mt-5">Proyecto 2 - UNO</h1>
+    <h5 class="d-flex justify-content-center mt-5">David Escalona García</h5>
 
     </header>
 
@@ -46,29 +47,26 @@
     </form>
 </div>
 
-<script>
-function formularioMinimoMaximo() {
-    // Obtener los valores de los campos
-    let jugadores = document.querySelector('#Jugadores').value;
-    let cartas = document.querySelector('#Cartas').value;
+    <script>
 
-    // Validación para el número de jugadores
-    if (jugadores < 1 || jugadores > 5) {
-        alert('El número de jugadores debe ser entre 1 y 5.');
-        return; // Detener el envío si no es válido
+    function formularioMinimoMaximo() { // Creo una funcion llamada formularioMinimoMaximo que me pondra un limite de cartas y jugadores 
+
+        let jugadores = document.querySelector('#Jugadores').value; // Creo una varialbe let llamada jugadores y la enlace con el id Jugadores mostrando su valor
+        let cartas = document.querySelector('#Cartas').value; // Creo una varialbe let llamada cartas y la enlace con el id Cartas mostrando su valor
+
+        if (jugadores < 1 || jugadores > 5) { // Creo un bucle que si hay menos de 1 jugador y mas de 5 saldra una alerta
+            alert('El número de jugadores debe ser entre 1 y 5.'); // No se puede jugar por que no se cumplen los requisitos
+            return; // Volvemos a empezar
+        }
+
+        if (cartas < 1 || cartas > 7) { // Creo un bucle que si hay menos de 1 carta y mas de 7 saldra una alerta
+            alert('El número de cartas debe ser entre 1 y 7.'); // No se puede jugar por que no se cumplen los requisitos
+            return; // Volvemos a empezar
+        }
+
+        document.getElementById('formulario').submit(); // seleciono el elementoID de ID de formulario y lo enviamos 
     }
-
-    // Validación para el número de cartas
-    if (cartas < 1 || cartas > 7) {
-        alert('El número de cartas debe ser entre 1 y 7.');
-        return; // Detener el envío si no es válido
-    }
-
-    // Si todo es correcto, enviar el formulario
-    // Esto es lo que hace que el formulario se envíe
-    document.getElementById('formulario').submit();
-}
-</script>
+    </script>
 
 
 </body>
