@@ -1,13 +1,12 @@
 <?php
-// Obtener datos enviados desde el formulario de index.php
-$jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 1;
-$cartas = isset($_POST['cartas']) ? (int)$_POST['cartas'] : 1;
 
-// Verificación de la existencia de los datos
-if ($jugadores < 1 || $jugadores > 5 || $cartas < 1 || $cartas > 7) {
-    echo "Los valores enviados no son válidos. Por favor, vuelve a intentarlo.";
-    exit;
-}
+    $jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 1; 
+    $cartas = isset($_POST['cartas']) ? (int)$_POST['cartas'] : 1;
+
+    if ($jugadores < 1 || $jugadores > 5 || $cartas < 1 || $cartas > 7) {
+        echo "Los valores enviados no son válidos. Por favor, vuelve a intentarlo.";
+        exit;
+    }
 
 ?>
 
