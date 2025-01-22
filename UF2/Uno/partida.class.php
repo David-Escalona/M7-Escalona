@@ -88,6 +88,7 @@
 
     <div class="text-center d-flex justify-content-center">
         <main class="d-flex justify-content-center container card mb-4 flex-row flex-wrap">
+
             <?php foreach ($manos as $index => $mano): ?>
                 <div class="col-12 mano">
                     <h5 class="ms-4 text-start">Jugador <?php echo $index + 1; ?></h5>
