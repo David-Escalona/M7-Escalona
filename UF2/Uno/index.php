@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,7 +37,7 @@
         </div>
         <div class="mb-3">
             <label for="Cartas" class="form-label">Número de Cartas:</label>
-            <input type="number" class="form-control" id="Cartas" name="cartas" required min="7">
+            <input type="number" class="form-control" id="Cartas" name="cartas" required min="1" max="7">
         </div>
         <button type="button" onclick="formularioMinimoMaximo()" class="btn btn-primary border border-dark mb-5 w-100 shadow fs-5">Comenzar Juego</button>
     </form>
@@ -64,10 +60,9 @@
             return; // Volvemos a empezar
         }
 
-        document.getElementById('formulario').submit(); // seleciono el elementoID de ID de formulario y lo enviamos 
+        document.getElementById('formulario').submit(); // seleciono el elementoID de ID de formulario y lo enviamos
     }
     </script>
-
 
 </body>
 </html>
