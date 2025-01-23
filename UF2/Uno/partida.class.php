@@ -3,7 +3,7 @@
     session_start();
     include 'baraja.class.php';
 
-    $jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 2;
+    $jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 5;
     $cartasPorJugador = isset($_POST['cartas']) ? (int)$_POST['cartas'] : 5;
 
     $baraja = new Baraja();
