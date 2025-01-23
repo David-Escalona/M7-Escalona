@@ -1,10 +1,9 @@
 <?php
-    
+
     session_start();
     include 'baraja.class.php';
 
-    
-    $jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 2; 
+    $jugadores = isset($_POST['jugadores']) ? (int)$_POST['jugadores'] : 2;
     $cartasPorJugador = isset($_POST['cartas']) ? (int)$_POST['cartas'] : 5;
 
     $baraja = new Baraja();
@@ -121,7 +120,7 @@
 
         <h1 class="mt-4 ">Mano de Juego</h1>
             <div id="carta-en-mano" class="col-12 mano d-flex justify-content-center">
-                <div class="carta">
+                <div class="carta" id="carta-en-mano-div">
                     <img src="img/<?php echo $_SESSION['cartaEnMano']; ?>" alt="Carta en Mano" class="img-fluid" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
             </div>
@@ -198,6 +197,35 @@
                             </div>
                         `;
                         $(`#mano-${data.jugadorIndex}`).append(cartaHtml);
+
+                        $(`#mano-${data.jugadorIndex} .carta`).off('click').on('click', function() {
+                            const cartaSeleccionada = $(this).data('carta');
+                            const jugadorIndex = $(this).data('jugador');
+
+                            $.ajax({
+                                url: '',
+                                type: 'POST',
+                                data: {
+                                    jugarCarta: true,
+                                    jugadorIndex: jugadorIndex,
+                                    carta: cartaSeleccionada
+                                },
+                                success: function(response) {
+                                    const data = JSON.parse(response);
+
+                                    if (data.success) {
+                                        $('#carta-en-mano img').attr('src', 'img/' + data.nuevaCarta);
+
+                                        $(`div[data-carta="${cartaSeleccionada}"]`).remove();
+                                    } else {
+                                        alert(data.message);
+                                    }
+                                },
+                                error: function() {
+                                    alert('Hubo un error al intentar jugar la carta.');
+                                }
+                            });
+                        });
                     }
                 });
             });
