@@ -7,10 +7,13 @@
 
         public function descripcio(): string {
         return "Aquest cotxe és un " . $this->marca . " " . $this->model . ".";
-        echo $cotxe->descripcio();
     }
 }
 
+        $cotxe = new Cotxe();
+        $cotxe -> marca = "SEAT";
+        $cotxe ->model = "ARONA";
+        echo $cotxe->descripcio();
 
     class Persona {
 
@@ -81,7 +84,7 @@
         public string $nom;
         public int $preu;
             
-        public function __construct(string $nom, string $preu) {
+        public function __construct(string $nom, int $preu) {
             $this->nom = $nom;
             $this->preu = $preu;
     }
