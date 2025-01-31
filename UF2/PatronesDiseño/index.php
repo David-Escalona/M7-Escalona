@@ -29,14 +29,41 @@
     <main>
 
     <div class="d-flex justify-content-center">
-        <h1 class="d-flex justify-content-center text-light mt-5">Patrones de Diseño</h1> 
+        <h1 class="d-flex justify-content-center text-light mt-5 bordeh1">Patrones de Diseño</h1> 
     </div>
 
-    <div class="d-flex justify-content-center">
-        <p class="text-light espaciado d-flex justify-content-center">Los patrones de diseño son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
+    <div class="d-flex justify-content-center espaciado">
+        <p class="text-light dfl">Los patrones de diseño son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
         Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.</p>
     </div>
     
+    <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1>
+
+    <div class="d-flex justify-content-center">    
+
+    <div class="diseño1 d-flex justify-content-center flex-row" style="width: 18rem;">
+        <a href="estructura.php"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+        
+        <p></p>
+    </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center">    
+
+    <div class="diseño1" style="width: 18rem;">
+        <a href="<?php include 'creacion.php'; ?>"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+    </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center mb-5">    
+
+    <div class="diseño1" style="width: 18rem;">
+        <a href="<?php include 'comportamiento.php'; ?>"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+    </div>
+
+    </div>
 
     </main>
 

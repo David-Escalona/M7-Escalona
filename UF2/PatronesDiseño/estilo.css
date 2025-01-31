@@ -24,8 +24,31 @@ header{
 
 .decoracion{
     text-decoration: none;
+    font-size: 15px;
 }
 
 .espaciado{
-    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.dfl{
+    display: flex;
+    justify-content: center;
+    width: 870px;
+    margin-left: 400px;
+}
+
+.bordeh1{
+    margin-left: -70px;
+    margin-bottom: 30px;
+}
+
+.margenPatron{
+    margin: 40px 90px 0px 0px;
+}
+
+.diseño1{
+    border-radius: 5px;
+    margin: 20px 180px 0px 0px;
 }
