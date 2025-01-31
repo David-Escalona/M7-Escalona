@@ -26,13 +26,10 @@
 </head>
 <body>
     
-    <header>
+    <header class="w-100">
      
-        <nav class="d-flex flex-row align-items-center text-light bg-danger p-4 text-center">
-            <ul class="list-unstyled text-center d-flex justify-content-center">
-                <li class="">Patrones de Diseño</li>
-            </ul>
-        </nav>
+    <h1 class="text-light w-100 bg-danger d-flex justify-content-center p-5 aa">Patrones de Diseño - David Escalona García</h1>
+        
         
     </header>
 

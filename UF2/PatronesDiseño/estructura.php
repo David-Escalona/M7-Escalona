@@ -24,7 +24,8 @@
 </head>
 <body>
 
-        <?php include 'header.php'; ?>
+        <?php include('nav.php'); ?>
+        <?php include('header.php'); ?>
     
 
 </body>

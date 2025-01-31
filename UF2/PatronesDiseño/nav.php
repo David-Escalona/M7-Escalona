@@ -39,8 +39,6 @@
                 <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patron de Creación</a></li>
                 <hr>
                 <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patron de Comportamiento</a></li>
-                <br><br><br><br><br><br><br>
-                <li>David Escalona García</li>
             </ul>
         </nav>
         
