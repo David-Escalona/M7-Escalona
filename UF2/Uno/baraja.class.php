@@ -1,64 +1,39 @@
 <?php
 
+    require_once 'carta.class.php';
+
 class Baraja {
-    
     public $conjunto_cartas = [];
 
-    public function __construct() {
-        // Definimos las cartas del UNO
-        $this->conjunto_cartas = [
-            '0_blue.png', '1_blue.png', '2_blue.png', '3_blue.png', '4_blue.png', '5_blue.png', '6_blue.png', '7_blue.png', '8_blue.png', '9_blue.png',
-            '0_green.png', '1_green.png', '2_green.png', '3_green.png', '4_green.png', '5_green.png', '6_green.png', '7_green.png', '8_green.png', '9_green.png',
-            '0_red.png', '1_red.png', '2_red.png', '3_red.png', '4_red.png', '5_red.png', '6_red.png', '7_red.png', '8_red.png', '9_red.png',
-            '0_yellow.png', '1_yellow.png', '2_yellow.png', '3_yellow.png', '4_yellow.png', '5_yellow.png', '6_yellow.png', '7_yellow.png', '8_yellow.png', '9_yellow.png',
-            'carta_girada.png',
-            'color_changer.png',
-            'picker_blue.png',
-            'picker_green.png',
-            'picker_red.png',    
-            'picker_red.png',
-            'picker_yellow.png',
-            'reverse_blue.png',
-            'reverse_green.png',
-            'reverse_red.png',
-            'picker_yellow.png',
-            'skip_blue.png',
-            'skip_green.png',
-            'skip_red.png',
-            'skip_yellow.png',
-        ];
-    }
+    public function crea_baraja()
+    {
+        $index = 0;
 
-    // Método para obtener una carta aleatoria del conjunto
-    public function obtenerCartaAleatoria() {
-        $indice = array_rand($this->conjunto_cartas);  
-        return $this->conjunto_cartas[$indice]; 
-    }
-
-    // Método para barajar el mazo de cartas
-    public function barajar() {
-        shuffle($this->conjunto_cartas); // Baraja las cartas de manera aleatoria
-    }
-
-    // Método para repartir cartas a los jugadores
-    public function repartirCartas($numJugadores, $cartasPorJugador) {
-        $this->barajar(); // Primero barajamos las cartas
-        $manos = []; // Array para almacenar las manos de los jugadores
-
-        for ($i = 0; $i < $numJugadores; $i++) {
-            $manoJugador = [];
-            for ($j = 0; $j < $cartasPorJugador; $j++) {
-                $manoJugador[] = $this->obtenerCartaAleatoria();
+        foreach (['red', 'yellow', 'blue', 'green'] as $color) {
+            for ($i = 0; $i <= 9; $i++) {
+                $this->conjunto_cartas[] = new Carta($color, $i, $index++);
             }
-            $manos[] = $manoJugador; // Asignamos la mano de este jugador
+            foreach (['reverse', 'skip', 'picker'] as $especial) {
+                $this->conjunto_cartas[] = new Carta($color, $especial, $index++);
+            }
+        }
+    }
+
+    public function mezcla()
+    {
+        shuffle($this->conjunto_cartas);
+    }
+
+    public function pintar_baraja(){
+        foreach ($this->conjunto_cartas as $carta) {
+            echo $carta->pinta_carta_link();
         }
 
-        return $manos; // Devolvemos todas las manos de los jugadores
     }
 
-    // Mostrar todas las cartas de la baraja (útil para debugging)
-    public function mostrarBaraja() {
-        return implode(', ', $this->conjunto_cartas);
+    public function pintar_baraja_girada(){
+        foreach ($this->conjunto_cartas as $c) {
+            echo $c->pinta_carta_girada();
+        }    
     }
 }
-?>
