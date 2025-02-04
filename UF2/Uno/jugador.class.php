@@ -1,34 +1,35 @@
 <?php
 
+require_once('baraja.class.php');
+require_once('carta.class.php');
+
 class Jugador {
     public $mano = [];
     public $id;
-    
+
     public function __construct($id) {
         $this->id = $id;
     }
-    
-    public function afegir_carta($carta) {
+
+    // Método para añadir una carta a la mano
+    public function añadir_carta($carta) {
         $this->mano[] = $carta;
     }
-    
+
+    // Método para eliminar una carta de la mano
     public function eliminar_carta($carta) {
-        foreach ($this->mano as $key => $c) {
-            if ($c->index === $carta->index) {
-                unset($this->mano[$key]);
-                $this->mano = array_values($this->mano);
-                return true;
-            }
+        $key = array_search($carta, $this->mano);
+        if ($key !== false) {
+            unset($this->mano[$key]);
+            $this->mano = array_values($this->mano); // Reorganizar el array después de eliminar la carta
         }
-        return false;
     }
-    
+
+    // Método para mostrar la mano del jugador
     public function mostrar_ma() {
-        $output = "";
         foreach ($this->mano as $carta) {
-            $output .= $carta->pinta_carta() . " ";
+            echo $carta->pinta_carta() . " ";
         }
-        return $output;
     }
 }
 

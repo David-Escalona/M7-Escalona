@@ -18,7 +18,6 @@
 
 </head>
 <body>
-    
     <header>
         <h1 class="d-flex justify-content-center mt-5">Proyecto 2 - UNO</h1>
         <h5 class="d-flex justify-content-center mt-5">David Escalona García</h5>
@@ -40,6 +39,5 @@
             </form>
         </div>
     </main>
-
 </body>
 </html>
