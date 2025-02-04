@@ -17,14 +17,13 @@ class Baraja {
 
         // Crear cartas numeradas
         foreach ($colores as $color) {
-            for ($i = 0; $i <= 9; $i++) {
+            for ($i = 1; $i <= 9; $i++) {
                 $this->conjunto_cartas[] = new Carta($color, $i);
             }
 
             // AÑADIR CARTAS ESPECIALES
             $this->conjunto_cartas[] = new Carta($color, 'reverse');
             $this->conjunto_cartas[] = new Carta($color, 'skip');
-            $this->conjunto_cartas[] = new Carta($color, '+2');
         }
     }
 

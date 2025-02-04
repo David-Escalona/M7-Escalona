@@ -52,6 +52,14 @@ $carta_mesa = $baraja->robar_carta();
         .mesa-carta {
             margin: 10px;
         }
+        h6{
+            font-size: 30px;
+            margin: 10px;
+        }
+        .carta{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -63,25 +71,26 @@ $carta_mesa = $baraja->robar_carta();
     <main class="container card p-4">
         <h5 class="text-center">Información de la Partida</h5>
         
-        <div class="mt-4">
-            <?php
-            foreach ($jugadores_obj as $jugador) {
-                echo "<h6>Jugador {$jugador->id} - Cartas: </h6>";
-                foreach ($jugador->mano as $index => $carta) {
-                    // Mostrar carta con un ID único para cada carta
-                    echo "<div class='carta' id='carta-{$jugador->id}-{$index}' onclick='moverCarta({$jugador->id}, {$index})'>";
-                    echo $carta->pinta_carta();
-                    echo "</div>";
-                }
-            }
-            ?>
-        </div>
-
         <div class="text-center mt-5">
             <p><strong>Carta sobre la mesa:</strong></p>
             <div id="mesa" class="mesa-carta">
                 <!-- La carta sobre la mesa se mostrará aquí -->
             </div>
+        </div>
+
+        <div class="mt-4">
+            <?php
+            foreach ($jugadores_obj as $jugador) {
+                echo "<h6>Jugador {$jugador->id}</h6>";
+                foreach ($jugador->mano as $index => $carta) {
+                    // Mostrar carta con un ID único para cada carta
+                    echo "<div class='carta' id='carta-{$jugador->id}-{$index}' onclick='moverCarta({$jugador->id}, {$index})'>";
+                    echo $carta->pinta_carta();
+                    echo "<hr>";
+                    echo "</div>";
+                }
+            }
+            ?>
         </div>
 
         <div class="d-flex justify-content-center mt-5 btn-group">

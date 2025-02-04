@@ -1,5 +1,6 @@
 <?php
 
+
 require_once('baraja.class.php');
 require_once('carta.class.php');
 

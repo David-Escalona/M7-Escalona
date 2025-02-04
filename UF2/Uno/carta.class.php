@@ -16,15 +16,16 @@ class Carta {
 
     // Método para mostrar la carta como imagen
     public function pinta_carta() {
-        // Si el valor es numérico (del 0 al 9), no hay cambios
+        // Aquí ajustamos el valor para que se adapte a tus imágenes.
         if (is_numeric($this->valor)) {
-            $valor = $this->valor; // Para cartas numéricas
+            // Para cartas numéricas, usamos el valor tal cual
+            $valor = $this->valor;
         } else {
-            // Si es una carta especial (reverse, skip, +2), convertimos el valor a minúsculas para el nombre de archivo
-            $valor = strtolower($this->valor);
+            // Para cartas especiales, asignamos un número fijo o un valor especial
+            $valor = strtolower($this->valor); // reverse, skip, etc.
         }
 
-        // Devolvemos la imagen con el formato {valor_color.png}
+        // Devolvemos la imagen correcta en función del color y el valor
         return "<img src='img/{$valor}_{$this->color}.png' alt='{$this->color} {$this->valor}' />";
     }
 
@@ -43,5 +44,4 @@ class Carta {
         return in_array($this->valor, ['reverse', 'skip', '+2']);
     }
 }
-
 ?>
