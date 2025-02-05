@@ -19,6 +19,10 @@
             font-family: Comfortaa;
         }
 
+        .mi{
+            margin-left: 405px;
+        }
+
     </style>
 
 </head>
@@ -37,33 +41,31 @@
         Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.</p>
     </div>
     
-    <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1>
-
-    <div class="d-flex justify-content-center">    
-
-    <div class="diseño1 d-flex justify-content-center flex-row" style="width: 18rem;">
-        <a href="estructura.php"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+    <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1> 
         
-        <p></p>
-    </div>
+    <div class="d-flex flex-column mi" style="width: 40rem;">
+        <div class="diseño1 ">
+            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-estructurales-en-php/patrones-estructurales-en-php.webp" class="card-img-top" alt="Patron Estructural"></a>
+        </div>
 
-    </div>
+    <div class="d-flex justify-content-start">    
 
-    <div class="d-flex justify-content-center">    
-
-    <div class="diseño1" style="width: 18rem;">
-        <a href="<?php include 'creacion.php'; ?>"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+    <div class="diseño1">
+        <a href="<?php include 'creacion.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
     </div>
 
     </div>
 
     <div class="d-flex justify-content-center mb-5">    
 
-    <div class="diseño1" style="width: 18rem;">
-        <a href="<?php include 'comportamiento.php'; ?>"><img src="img/Estructural.webp" class="card-img-top" alt="Patron Estructural"></a>
+    <div class="diseño1">
+        <a href="<?php include 'comportamiento.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
     </div>
 
     </div>
+        </div>
+
+    
 
     </main>
 

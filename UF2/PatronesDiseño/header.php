@@ -1,9 +1,5 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,20 +14,31 @@
     <title>David Escalona García</title>
 
     <style>
-        header{
+
+        main{
             font-family: Comfortaa;
         }
+
+        .mi{
+            margin-left: 405px;
+        }
+
     </style>
 
 </head>
 <body>
     
-    <header class="w-100">
-     
-    <h1 class="text-light w-100 bg-danger d-flex justify-content-center p-5 aa">Patrones de Diseño - David Escalona García</h1>
-        
-        
+    <header class="navHeader">
+
+    <div class="bg-danger">
+        <h1 class="text-light tituloHeader bg-danger p-5">Patrones de Diseño</h1> 
+    </div>
+
     </header>
+
+    <?php include 'nav.php'; ?>
+
+    
 
 </body>
 </html>

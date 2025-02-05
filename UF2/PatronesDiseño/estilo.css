@@ -13,7 +13,7 @@ body{
     background-size: cover;
 }
 
-header{
+.header{
     width: 250px;
     height: 100vh;
     position: fixed;
@@ -39,10 +39,6 @@ header{
     margin-left: 400px;
 }
 
-.bordeh1{
-    margin-left: -70px;
-    margin-bottom: 30px;
-}
 
 .margenPatron{
     margin: 40px 90px 0px 0px;
@@ -53,11 +49,16 @@ header{
     margin: 20px 180px 0px 0px;
 }
 
-.aa {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  }
-  
+.tituloHeader{
+    margin-left: 730px;
+}
+
+.navHeader{
+    display: flex;
+    justify-content: start;
+    height: 100%;
+}
+
+.bordeh1{
+    margin-right: 70px;
+}

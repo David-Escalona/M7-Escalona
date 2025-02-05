@@ -26,7 +26,7 @@
 </head>
 <body>
     
-    <header class="d-flex flex-column align-items-center text-light bg-danger p-2 fixed-left">
+    <header class="d-flex flex-column align-items-center text-light bg-danger p-2 fixed-left header">
 
         <img src="img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
         
