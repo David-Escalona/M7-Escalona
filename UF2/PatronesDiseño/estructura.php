@@ -12,64 +12,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
     <title>David Escalona García</title>
-
+    
     <style>
-
-        main{
+        .comfortaa{
             font-family: Comfortaa;
         }
-
-        .mi{
-            margin-left: 405px;
-        }
-
     </style>
 
 </head>
 <body>
-    
+
+    <main class="comfortaa">
+
+    <div class="espacioEs d-flex flex-column">
+        <div class="d-flex justify-content-center">
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1 mP">Patrón de Estructura</h1> 
+        </div>
+
+        <div class="d-flex justify-content-center espaciado">
+            <p class="text-light dfl">Un patrón de estructura en programación y desarrollo de software es una solución general que describe cómo organizar y estructurar elementos dentro de un sistema para resolver un problema específico de diseño. Estos patrones proporcionan una manera probada y reutilizable de organizar el código o los componentes del sistema, asegurando que el software sea más fácil de entender, mantener y extender.
+            Los patrones de estructura están orientados a resolver problemas que surgen en la arquitectura y organización de un sistema, como la forma en que las clases, objetos, módulos o componentes interactúan entre sí. Ayudan a que el código sea más modular, escalable y flexible.
+        </div>
+        
+        <form onsubmit="event.preventDefault(); redirectToPattern();" class="formulario">
+            <select id="patternSelect" name="pattern" class="estiloF">
+            <option value="default">Selecciona un patrón...</option>
+            <option value="patrones/facade.php">Facade</option>
+            <option value="patrones/adapter.php">Adapter</option>
+            <option value="patron_composicion.html">Composición (Composite)</option>
+            <option value="patron_decorador.html">Decorador (Decorator)</option>
+            </select>
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+        
+    </div>
+
+    </main>
+
     <?php include 'nav.php'; ?>
     <?php include 'header.php'; ?>
 
+    <script>
+    // Función para redirigir al usuario según la opción seleccionada
+    function redirectToPattern() {
+      const selectElement = document.getElementById("patternSelect");
+      const selectedPattern = selectElement.value;
 
-    <main>
-
-    <div class="d-flex justify-content-center">
-        <h1 class="d-flex justify-content-center text-light mt-5 margenEstructuraTitulo">Patrones de Estrucura</h1> 
-    </div>
-
-    <div class="d-flex justify-content-center espaciado">
-        <p class="text-light dfl">Los patrones de diseño son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
-        Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.</p>
-    </div>
-    
-    <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1> 
-        
-    <div class="d-flex flex-column mi" style="width: 40rem;">
-        <div class="diseño1 ">
-            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-estructurales-en-php/patrones-estructurales-en-php.webp" class="card-img-top" alt="Patron Estructural"></a>
-        </div>
-
-    <div class="d-flex justify-content-start">    
-
-    <div class="diseño1">
-        <a href="<?php include 'creacion.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
-    </div>
-
-    </div>
-
-    <div class="d-flex justify-content-center mb-5">    
-
-    <div class="diseño1">
-        <a href="<?php include 'comportamiento.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
-    </div>
-
-    </div>
-        </div>
-
-    
-
-    </main>
+      // Si el valor seleccionado no es "default", redirigir a la página correspondiente
+      if (selectedPattern !== "default") {
+        window.location.href = selectedPattern;
+      } else {
+        alert("Por favor, selecciona un patrón de estructura.");
+      }
+    }
+  </script>
 
 </body>
 </html>

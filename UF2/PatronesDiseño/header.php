@@ -10,28 +10,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
     <title>David Escalona García</title>
 
     <style>
-
-        main{
-            font-family: Comfortaa;
+        .display{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-family: Permanent Marker;
         }
 
-        .mi{
-            margin-left: 405px;
+        .tamaño{
+            font-size: 90px;
         }
-
     </style>
 
 </head>
 <body>
     
-    <header class="navHeader">
+    <header>
 
-    <div class="bg-danger">
-        <h1 class="text-light tituloHeader bg-danger p-5">Patrones de Diseño</h1> 
+    <div class="bg-danger display p-5">
+        <h1 class="text-light tamaño">Patrones de Diseño</h1> 
     </div>
 
     </header>

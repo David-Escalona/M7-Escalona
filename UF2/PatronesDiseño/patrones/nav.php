@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,13 +24,13 @@
     
     <header class="d-flex flex-column align-items-center text-light bg-danger p-2 fixed-left header">
 
-        <img src="img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
+        <img src="../img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
         
         <nav>
             <ul class="list-unstyled text-star">
-                <li class="mb-3 fs-5"><a href="index.php" class="text-light decoracion">Home</a></li>
+                <li class="mb-3 fs-5"><a href="../index.php" class="text-light decoracion">Home</a></li>
                 <hr>
-                <li class="mb-3 fs-6"><a href="estructura.php" class="text-light decoracion">Patrón de Estructura</a></li>
+                <li class="mb-3 fs-6"><a href="../estructura.php" class="text-light decoracion">Patrón de Estructura</a></li>
                 <hr>
                 <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patrón de Creación</a></li>
                 <hr>
