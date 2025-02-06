@@ -57,7 +57,7 @@ class JocAdivinacio {
         </div>
         
         <div class="dflex">
-            <form action="">
+            <form method="POST">
                 <div>
                     <label for="Jugadores" class="form-label">Escoje tu numero</label>
                     <input type="number" class="form-control" id="Jugadores" name="jugadores" required min="1" max="20">
