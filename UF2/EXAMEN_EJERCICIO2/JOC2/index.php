@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Joc2 - David Escalona García</title>
     
     <style>
@@ -93,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <h1>Carrito de la compra</h1>
         
-        <div class="dflex">
+        <div class="dflex container">
             <form method="POST">
             <div>
                 <label for="nom" class="form-label">Producto</label>
@@ -103,14 +104,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="preu" class="form-label">Precio</label>
                 <input type="number" class="form-control" id="preu" name="preu" required>
             </div>
-            <button type="submit" name="añadir">Añadir Compra</button>
+            <button type="submit" name="añadir" class="mt-4 rounded">Añadir Compra</button>
             </form>
         </div>
 
     </header>
 
     <main>
-        <div class="dflex">
+        <div class="dflex container">
             <table class="table">
                 <tr class="table">
                     <td class="table">
