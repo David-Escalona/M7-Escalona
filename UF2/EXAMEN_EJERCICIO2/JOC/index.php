@@ -11,6 +11,8 @@ class JocAdivinacio {
     public function mostrarNumeroSecret() {
         echo "El numero aleatorio es: " .$this->numeroSecret . "\n";
     }
+
+    
 }
 ?>
 
@@ -32,6 +34,12 @@ class JocAdivinacio {
             justify-content: center;
             font-size: 30px;
         }
+        .dflex{
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
     </style>
     
 </head>
@@ -41,13 +49,22 @@ class JocAdivinacio {
         <h1>Numero Aleatorio</h1>
         
         <div class="aleatorio">
-          <?php 
+        <?php 
         $joc = new JocAdivinacio();
 
         $joc->mostrarNumeroSecret();
         ?>  
         </div>
         
+        <div class="dflex">
+            <form action="">
+                <div>
+                    <label for="Jugadores" class="form-label">Escoje tu numero</label>
+                    <input type="number" class="form-control" id="Jugadores" name="jugadores" required min="1" max="20">
+                </div>
+                <button type="submit">Aceptar</button>
+            </form>
+        </div>
 
     </header>
 
