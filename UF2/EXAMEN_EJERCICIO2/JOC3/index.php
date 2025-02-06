@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Joc3 - David Escalona García</title>
     
     <style>
@@ -96,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <h1>Formulario de Validación</h1>
         
-        <div class="dflex">
-            <form method="POST">
+        <div class="dflex container">
+            <form method="POST" class="form">
             <div>
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" required>
@@ -110,14 +111,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="correu" class="form-label">Email</label>
                 <input type="email" class="form-control" id="correu" name="correu" required>
             </div>
-            <button type="submit" name="añadir">Añadir usuario</button>
+            <button type="submit" name="añadir" class="mt-4 rounded">Añadir usuario</button>
             </form>
         </div>
 
     </header>
 
     <main>
-        <div class="dflex">
+        <div class="dflex container">
             <table class="table">
                 <tr class="table">
                     <td class="table">
@@ -136,6 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </table>
         </div>
     </main>
+    
 
 </body>
 </html>
