@@ -31,9 +31,9 @@
     
     <?php include 'nav.php'; ?>
 
-    <main class="espacio">
+    <main>
 
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column espacio">
         <div class="d-flex justify-content-center">
             <h1 class="d-flex justify-content-center text-light mt-5 bordeh1">Patrones de Diseño</h1> 
         </div>
@@ -44,29 +44,31 @@
         </div>
         
         <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1> 
-    </div>
-        
+    </div>     
 
-    <div class="d-flex flex-column mi" style="width: 40rem;">
+    <div class="margenes">
+        <div class="d-flex flex-column mi" style="width: 40rem;">
+            <div class="diseño1">
+                <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-estructurales-en-php/patrones-estructurales-en-php.webp" class="card-img-top" alt="Patron Estructural"></a>
+            </div>
+
+        <div class="d-flex justify-content-start">    
+
         <div class="diseño1">
-            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-estructurales-en-php/patrones-estructurales-en-php.webp" class="card-img-top" alt="Patron Estructural"></a>
+            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
+        </div>
         </div>
 
-    <div class="d-flex justify-content-start">    
+        <div class="d-flex justify-content-center mb-5">    
 
-    <div class="diseño1">
-        <a href="<?php include 'creacion.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
-    </div>
-    </div>
+        <div class="diseño1">
+            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
+        </div>
 
-    <div class="d-flex justify-content-center mb-5">    
-
-    <div class="diseño1">
-        <a href="<?php include 'comportamiento.php'; ?>"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
+        </div>
+        </div> 
     </div>
-
-    </div>
-    </div>
+    
     </main>
 
 </body>

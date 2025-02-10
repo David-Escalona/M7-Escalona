@@ -62,7 +62,8 @@ body{
 }
 
 .espacio{
-    position: fixed;
+    position: absolute;
+    margin-bottom: 500px;
 }
 
 .mP{
@@ -82,4 +83,8 @@ body{
 
 .boton{
     padding: 25px;
+}
+
+.margenes{
+    padding-top: 350px;
 }

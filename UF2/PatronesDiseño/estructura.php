@@ -33,7 +33,20 @@
             <p class="text-light dfl">Un patrón de estructura en programación y desarrollo de software es una solución general que describe cómo organizar y estructurar elementos dentro de un sistema para resolver un problema específico de diseño. Estos patrones proporcionan una manera probada y reutilizable de organizar el código o los componentes del sistema, asegurando que el software sea más fácil de entender, mantener y extender.
             Los patrones de estructura están orientados a resolver problemas que surgen en la arquitectura y organización de un sistema, como la forma en que las clases, objetos, módulos o componentes interactúan entre sí. Ayudan a que el código sea más modular, escalable y flexible.
         </div>
-        
+
+        <div class="espaciado">
+            <div class="espaciado">
+              <h1>Adapter</h1>
+              <img src="https://refactoring.guru/images/patterns/cards/adapter-mini-2x.png" alt="">
+              <p>Adapter es un patrón de diseño estructural que permite la colaboración entre objetos con interfaces incompatibles.</p>
+            </div>
+      
+      <img src="" alt="">
+      <img src="" alt="">
+      <img src="" alt="">
+      <img src="" alt="">
+      <img src="" alt="">
+    </div>
         <form onsubmit="event.preventDefault(); redirectToPattern();" class="formulario">
             <select id="patternSelect" name="pattern" class="estiloF">
             <option value="default">Selecciona un patrón...</option>
@@ -46,6 +59,8 @@
         </form>
         
     </div>
+
+    
 
     </main>
 
