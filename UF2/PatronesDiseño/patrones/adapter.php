@@ -29,23 +29,22 @@
 </head>
 <body>
     
-    
+    <?php include '../nav.php'; ?>
+    <?php include '../header.php'; ?>
 
-    <main class="espacio">
+    <main>
 
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column espacio">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1">Patrones de Diseño</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1">Patron - Adapter</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">
-            <p class="text-light dfl">Los patrones de diseño son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
-            Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.</p>
+            <p class="text-light dfl">El patrón Adapter es un patrón de diseño estructural que permite que dos interfaces incompatibles trabajen juntas. Funciona como un "adaptador" que convierte una interfaz en otra esperada por el cliente, sin necesidad de modificar el código original de las clases que no son compatibles entre sí.</p>
         </div>
-        
-        <h1 class="d-flex justify-content-center text-light margenPatron">Tipos de Patrones</h1> 
-    </div>
-
+    </div>     
+    
+    <div class="espaciado text-light">
     <pre>
           <code>
           // Digamos que tienes dos clases con interfaces compatibles:
@@ -107,8 +106,10 @@
           hole.fits(large_sqpeg_adapter) // falso
           </code>
         </pre>
+    </div>
+    
 
     </main>
-    <?php include 'nav.php'; ?>
+
 </body>
 </html>

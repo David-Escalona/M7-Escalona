@@ -20,11 +20,11 @@
     </style>
 
 </head>
-<body>
+<body class="body">
 
     <main class="comfortaa">
 
-    <div class="espacioEs d-flex flex-column">
+    <div class="espacioEs d-flex flex-column espacio">
         <div class="d-flex justify-content-center">
             <h1 class="d-flex justify-content-center text-light mt-5 bordeh1 mP">Patrón de Estructura</h1> 
         </div>
@@ -34,26 +34,110 @@
             Los patrones de estructura están orientados a resolver problemas que surgen en la arquitectura y organización de un sistema, como la forma en que las clases, objetos, módulos o componentes interactúan entre sí. Ayudan a que el código sea más modular, escalable y flexible.
         </div>
 
-        <div class="espaciado">
-            <div class="espaciado">
-              <h1>Adapter</h1>
-              <img src="https://refactoring.guru/images/patterns/cards/adapter-mini-2x.png" alt="">
-              <p>Adapter es un patrón de diseño estructural que permite la colaboración entre objetos con interfaces incompatibles.</p>
+        <div class="contenido">
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/adapter-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>ADAPTER</h1></a>
+                    </div>
+                </figure>
             </div>
-      
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-    </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/bridge-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>BRIDGE</h1></a>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/composite-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>COMPOSITE</h1></a>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/decorator-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>DECORATOR</h1></a>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/facade-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>FACADE</h1></a>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/flyweight-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>FLYWEIGHT</h1></a>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="imagen opacidad">
+                <figure>
+                    <a href="patrones/adapter.php">
+                        <div>
+                            <img src="https://refactoring.guru/images/patterns/cards/proxy-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
+                        </div>
+                    </a>
+                    <div class="capa">
+                        <a href="patrones/adapter.php"><h1>PROXY</h1></a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
         <form onsubmit="event.preventDefault(); redirectToPattern();" class="formulario">
             <select id="patternSelect" name="pattern" class="estiloF">
             <option value="default">Selecciona un patrón...</option>
-            <option value="patrones/facade.php">Facade</option>
             <option value="patrones/adapter.php">Adapter</option>
-            <option value="patron_composicion.html">Composición (Composite)</option>
-            <option value="patron_decorador.html">Decorador (Decorator)</option>
+            <option value="patrones/bridge.php">Bridge</option>
+            <option value="patron_composicion.html">Composite</option>
+            <option value="patron_decorador.html">Decorator</option>
+            <option value="patrones/facade.php">Facade</option>
+            <option value="patrones/facade.php">Flyweight</option>
+            <option value="patrones/facade.php">Proxy</option>
+            
             </select>
             <button type="submit" class="boton">Enviar</button>
         </form>
