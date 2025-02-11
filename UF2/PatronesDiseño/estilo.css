@@ -34,6 +34,22 @@ body{
     height: 1900px;
 }
 
+.bodyComposite{
+    background-image: url(https://img.freepik.com/fotos-premium/resumen-fondo-imagenes-fondos-pantalla-ai-generado_643360-118070.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 2500px;
+}
+
+.bodyDecorator{
+    background-image: url(https://img.freepik.com/fotos-premium/resumen-fondo-imagenes-fondos-pantalla-ai-generado_643360-118070.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 3300px;
+}
+
 .header{
     width: 250px;
     height: 100vh;
@@ -84,6 +100,26 @@ body{
 
 .bordeBridge{
     margin-right: 160px;
+}
+
+.bordeComposite{
+    margin-right: 70px;
+}
+
+.bordeDecorator{
+    margin-right: 85px;
+}
+
+.bordeFacade{
+    margin-right: 140px;
+}
+
+.bordeFly{
+    margin-right: 100px;
+}
+
+.bordeProxy{
+    margin-right: 185px;
 }
 
 .espacioEs{

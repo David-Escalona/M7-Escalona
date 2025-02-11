@@ -63,65 +63,65 @@
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/composite.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/composite-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>COMPOSITE</h1></a>
+                        <a href="patrones/composite.php"><h1>COMPOSITE</h1></a>
                     </div>
                 </figure>
             </div>
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/decorator.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/decorator-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>DECORATOR</h1></a>
+                        <a href="patrones/decorator.php"><h1>DECORATOR</h1></a>
                     </div>
                 </figure>
             </div>
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/facade.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/facade-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>FACADE</h1></a>
+                        <a href="patrones/facade.php"><h1>FACADE</h1></a>
                     </div>
                 </figure>
             </div>
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/flyweight.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/flyweight-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>FLYWEIGHT</h1></a>
+                        <a href="patrones/flyweight.php"><h1>FLYWEIGHT</h1></a>
                     </div>
                 </figure>
             </div>
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/proxy.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/proxy-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>PROXY</h1></a>
+                        <a href="patrones/proxy.php"><h1>PROXY</h1></a>
                     </div>
                 </figure>
             </div>
@@ -132,11 +132,11 @@
             <option value="default">Selecciona un patrón...</option>
             <option value="patrones/adapter.php">Adapter</option>
             <option value="patrones/bridge.php">Bridge</option>
-            <option value="patron_composicion.html">Composite</option>
-            <option value="patron_decorador.html">Decorator</option>
+            <option value="patrones/composite.php">Composite</option>
+            <option value="patrones/decortator.php">Decorator</option>
             <option value="patrones/facade.php">Facade</option>
-            <option value="patrones/facade.php">Flyweight</option>
-            <option value="patrones/facade.php">Proxy</option>
+            <option value="patrones/flyweught.php">Flyweight</option>
+            <option value="patrones/proxy.php">Proxy</option>
             
             </select>
             <button type="submit" class="boton">Enviar</button>

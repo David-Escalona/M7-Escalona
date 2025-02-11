@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +17,42 @@
         header{
             font-family: Comfortaa;
         }
+
+        .dropbtn {
+            color: white;
+            padding: 1px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
     </style>
 
 </head>
@@ -28,17 +60,48 @@
     
     <header class="d-flex flex-column align-items-center text-light bg-danger p-2 fixed-left header">
 
-        <img src="img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
+        <img src="../img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
         
         <nav>
             <ul class="list-unstyled text-star">
-                <li class="mb-3 fs-5"><a href="index.php" class="text-light decoracion">Home</a></li>
+                <li class="mb-3 fs-5"><a href="../index.php" class="text-light decoracion">Home</a></li>
                 <hr>
-                <li class="mb-3 fs-6"><a href="estructura.php" class="text-light decoracion">Patrón de Estructura</a></li>
+
+                <div class="dropdown bg-danger">
+                    <button class="dropbtn bg-danger">Patrón de Estrucutra</button>
+                    <div class="dropdown-content">
+                    <a href="../patrones/adapter.php">Adapter</a>
+                    <a href="../patrones/bridge.php">Bridge</a>
+                    <a href="../patrones/composite.php">Composite</a>
+                    <a href="../patrones/decorator.php">Decorator</a>
+                    <a href="../patrones/facade.php">Facade</a>
+                    <a href="../patrones/flyweight.php">Flyweight</a>
+                    <a href="../patrones/proxy.php">Proxy</a>
+                    </div>
+                </div>
+
                 <hr>
-                <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patrón de Creación</a></li>
+
+                <div class="dropdown bg-danger">
+                    <button class="dropbtn bg-danger">Patrón de Creación</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                </div>
+
                 <hr>
-                <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patrón de Comportamiento</a></li>
+
+                <div class="dropdown bg-danger">
+                    <button class="dropbtn bg-danger">Patrón de Comportamiento</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                </div>
+            
             </ul>
         </nav>
         
