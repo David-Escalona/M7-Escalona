@@ -72,7 +72,7 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <a href="../patrones/estructura.php" class="dropbtn bg-danger">Patrón de Estrucutra</a>
+                    <a href="../estructura.php" class="dropbtn bg-danger">Patrón de Estrucutra</a>
                     <div class="dropdown-content">
                     <a href="../patrones/adapter.php">Adapter</a>
                     <a href="../patrones/bridge.php">Bridge</a>
@@ -87,7 +87,7 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <a href="creacion.php" class="dropbtn bg-danger">Patrón de Creación</a>
+                    <a href="../creacion.php" class="dropbtn bg-danger">Patrón de Creación</a>
                     <div class="dropdown-content">
                     <a href="../patrones/factorymethod.php">Factory</a>
                     <a href="../patrones/abstractfactory.php">Abstract</a>
@@ -100,7 +100,7 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <a href="../patrones/comportamiento.php" class="dropbtn bg-danger">Patrón de Comportamiento</a>
+                    <a href="../comportamiento.php" class="dropbtn bg-danger">Patrón de Comportamiento</a>
                     <div class="dropdown-content">
                     <a href="../patrones/responsability.php">Responsability</a>
                     <a href="../patrones/command.php">Command</a>
