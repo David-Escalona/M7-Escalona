@@ -33,7 +33,7 @@
 
     <div class="d-flex flex-column espacio as">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeFly">Patron - Flyweight</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeFly">Patrón - Flyweight</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">

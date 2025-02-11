@@ -55,7 +55,7 @@
         <div class="d-flex justify-content-start">    
 
         <div class="diseño1">
-            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
+            <a href="creacion.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-creacionales-en-php/patrones-creacionales-en-php.webp" class="card-img-top" alt="Patron de Creación"></a>
         </div>
         </div>
 

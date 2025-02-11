@@ -33,7 +33,7 @@
 
     <div class="d-flex flex-column espacio as">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeComposite">Patron - Composite</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeComposite">Patrón - Composite</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">

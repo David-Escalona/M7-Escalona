@@ -42,7 +42,7 @@
 
         .dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 10px 10px;
             text-decoration: none;
             display: block;
         }
@@ -52,7 +52,11 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
+        a{
+            line-height: none;
+            list-style: none;
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -68,7 +72,7 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <button class="dropbtn bg-danger">Patrón de Estrucutra</button>
+                    <a href="../patrones/estructura.php" class="dropbtn bg-danger">Patrón de Estrucutra</a>
                     <div class="dropdown-content">
                     <a href="../patrones/adapter.php">Adapter</a>
                     <a href="../patrones/bridge.php">Bridge</a>
@@ -83,7 +87,7 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <button class="dropbtn bg-danger">Patrón de Creación</button>
+                    <a href="creacion.php" class="dropbtn bg-danger">Patrón de Creación</a>
                     <div class="dropdown-content">
                     <a href="../patrones/factorymethod.php">Factory</a>
                     <a href="../patrones/abstractfactory.php">Abstract</a>
@@ -96,11 +100,13 @@
                 <hr>
 
                 <div class="dropdown bg-danger">
-                    <button class="dropbtn bg-danger">Patrón de Comportamiento</button>
+                    <a href="../patrones/comportamiento.php" class="dropbtn bg-danger">Patrón de Comportamiento</a>
                     <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="../patrones/responsability.php">Responsability</a>
+                    <a href="../patrones/command.php">Command</a>
+                    <a href="../patrones/iterator.php">Iterator</a>
+                    <a href="../patrones/mediator.php">Mediator</a>
+                    <a href="../patrones/memento.php">Memento</a>
                     </div>
                 </div>
             

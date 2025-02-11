@@ -69,7 +69,7 @@ body{
 
 .header{
     width: 250px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     left: 0;
     top: 0;
@@ -291,4 +291,8 @@ body{
 
 .ass{
     margin-top: 400px;
+}
+
+.mC{
+    margin-left: 0px;
 }

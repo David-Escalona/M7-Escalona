@@ -26,12 +26,12 @@
 
     <div class="espacioEs d-flex flex-column espacio">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1 mP">Patrón de Estructura</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1 mE">Patrón de Estructura</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">
             <p class="text-light dfl">Un patrón de estructura en programación y desarrollo de software es una solución general que describe cómo organizar y estructurar elementos dentro de un sistema para resolver un problema específico de diseño. Estos patrones proporcionan una manera probada y reutilizable de organizar el código o los componentes del sistema, asegurando que el software sea más fácil de entender, mantener y extender.
-            Los patrones de estructura están orientados a resolver problemas que surgen en la arquitectura y organización de un sistema, como la forma en que las clases, objetos, módulos o componentes interactúan entre sí. Ayudan a que el código sea más modular, escalable y flexible.
+            Los patrones de estructura están orientados a resolver problemas que surgen en la arquitectura y organización de un sistema, como la forma en que las clases, objetos, módulos o componentes interactúan entre sí. Ayudan a que el código sea más modular, escalable y flexible.</p>
         </div>
 
         <div class="contenido">

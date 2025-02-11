@@ -33,7 +33,7 @@
 
     <div class="d-flex flex-column espacio as">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeBridge">Patron - Bridge</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeBridge">Patrón - Bridge</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">
