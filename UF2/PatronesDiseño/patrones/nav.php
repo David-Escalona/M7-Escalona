@@ -68,19 +68,19 @@
         
         <nav>
             <ul class="list-unstyled text-star">
-                <li class="mb-3 fs-5"><a href="./index.php" class="text-light decoracion">Home</a></li>
+                <li class="mb-3 fs-5"><a href="../index.php" class="text-light decoracion">Home</a></li>
                 <hr>
 
                 <div class="dropdown bg-danger">
                     <a href="../estructura.php" class="dropbtn bg-danger">Patrón de Estrucutra</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/adapter.php">Adapter</a>
-                    <a href="../patrones/bridge.php">Bridge</a>
-                    <a href="../patrones/composite.php">Composite</a>
-                    <a href="../patrones/decorator.php">Decorator</a>
-                    <a href="../patrones/facade.php">Facade</a>
-                    <a href="../patrones/flyweight.php">Flyweight</a>
-                    <a href="../patrones/proxy.php">Proxy</a>
+                    <a href="adapter.php">Adapter</a>
+                    <a href="bridge.php">Bridge</a>
+                    <a href="composite.php">Composite</a>
+                    <a href="decorator.php">Decorator</a>
+                    <a href="facade.php">Facade</a>
+                    <a href="flyweight.php">Flyweight</a>
+                    <a href="proxy.php">Proxy</a>
                     </div>
                 </div>
 
@@ -89,11 +89,11 @@
                 <div class="dropdown bg-danger">
                     <a href="../creacion.php" class="dropbtn bg-danger">Patrón de Creación</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/factorymethod.php">Factory</a>
-                    <a href="../patrones/abstractfactory.php">Abstract</a>
-                    <a href="../patrones/builder.php">Builder</a>
-                    <a href="../patrones/prototype.php">Prototype</a>
-                    <a href="../patrones/singleton.php">Singleton</a>
+                    <a href="factorymethod.php">Factory</a>
+                    <a href="abstractfactory.php">Abstract</a>
+                    <a href="builder.php">Builder</a>
+                    <a href="prototype.php">Prototype</a>
+                    <a href="singleton.php">Singleton</a>
                     </div>
                 </div>
 
@@ -102,11 +102,11 @@
                 <div class="dropdown bg-danger">
                     <a href="../comportamiento.php" class="dropbtn bg-danger">Patrón de Comportamiento</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/responsability.php">Responsability</a>
-                    <a href="../patrones/command.php">Command</a>
-                    <a href="../patrones/iterator.php">Iterator</a>
-                    <a href="../patrones/mediator.php">Mediator</a>
-                    <a href="../patrones/memento.php">Memento</a>
+                    <a href="responsability.php">Responsability</a>
+                    <a href="command.php">Command</a>
+                    <a href="iterator.php">Iterator</a>
+                    <a href="mediator.php">Mediator</a>
+                    <a href="memento.php">Memento</a>
                     </div>
                 </div>
             
