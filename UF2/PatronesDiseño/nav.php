@@ -74,13 +74,13 @@
                 <div class="dropdown bg-danger">
                     <a href="estructura.php" class="dropbtn bg-danger">Patrón de Estrucutra</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/adapter.php">Adapter</a>
-                    <a href="../patrones/bridge.php">Bridge</a>
-                    <a href="../patrones/composite.php">Composite</a>
-                    <a href="../patrones/decorator.php">Decorator</a>
-                    <a href="../patrones/facade.php">Facade</a>
-                    <a href="../patrones/flyweight.php">Flyweight</a>
-                    <a href="../patrones/proxy.php">Proxy</a>
+                    <a href="patrones/adapter.php">Adapter</a>
+                    <a href="patrones/bridge.php">Bridge</a>
+                    <a href="patrones/composite.php">Composite</a>
+                    <a href="patrones/decorator.php">Decorator</a>
+                    <a href="patrones/facade.php">Facade</a>
+                    <a href="patrones/flyweight.php">Flyweight</a>
+                    <a href="patrones/proxy.php">Proxy</a>
                     </div>
                 </div>
 
@@ -89,11 +89,11 @@
                 <div class="dropdown bg-danger">
                     <a href="creacion.php" class="dropbtn bg-danger">Patrón de Creación</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/factorymethod.php">Factory</a>
-                    <a href="../patrones/abstractfactory.php">Abstract</a>
-                    <a href="../patrones/builder.php">Builder</a>
-                    <a href="../patrones/prototype.php">Prototype</a>
-                    <a href="../patrones/singleton.php">Singleton</a>
+                    <a href="patrones/factorymethod.php">Factory</a>
+                    <a href="patrones/abstractfactory.php">Abstract</a>
+                    <a href="patrones/builder.php">Builder</a>
+                    <a href="patrones/prototype.php">Prototype</a>
+                    <a href="patrones/singleton.php">Singleton</a>
                     </div>
                 </div>
 
@@ -102,11 +102,11 @@
                 <div class="dropdown bg-danger">
                     <a href="comportamiento.php" class="dropbtn bg-danger">Patrón de Comportamiento</a>
                     <div class="dropdown-content">
-                    <a href="../patrones/responsability.php">Responsability</a>
-                    <a href="../patrones/command.php">Command</a>
-                    <a href="../patrones/iterator.php">Iterator</a>
-                    <a href="../patrones/mediator.php">Mediator</a>
-                    <a href="../patrones/memento.php">Memento</a>
+                    <a href=".patrones/responsability.php">Responsability</a>
+                    <a href="patrones/command.php">Command</a>
+                    <a href="patrones/iterator.php">Iterator</a>
+                    <a href="patrones/mediator.php">Mediator</a>
+                    <a href="patrones/memento.php">Memento</a>
                     </div>
                 </div>
             
