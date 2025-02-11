@@ -50,13 +50,13 @@
 
             <div class="imagen opacidad">
                 <figure>
-                    <a href="patrones/adapter.php">
+                    <a href="patrones/bridge.php">
                         <div>
                             <img src="https://refactoring.guru/images/patterns/cards/bridge-mini-2x.png" alt="Sobre Mi" class="ADAPTER">
                         </div>
                     </a>
                     <div class="capa">
-                        <a href="patrones/adapter.php"><h1>BRIDGE</h1></a>
+                        <a href="patrones/bridge.php"><h1>BRIDGE</h1></a>
                     </div>
                 </figure>
             </div>

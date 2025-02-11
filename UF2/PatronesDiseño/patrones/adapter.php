@@ -27,16 +27,15 @@
     </style>
 
 </head>
-<body>
+<body class="bodyAdapter">
     
-    <?php include '../nav.php'; ?>
-    <?php include '../header.php'; ?>
+    
 
     <main>
 
-    <div class="d-flex flex-column espacio">
+    <div class="d-flex flex-column espacio as">
         <div class="d-flex justify-content-center">
-            <h1 class="d-flex justify-content-center text-light mt-5 bordeh1">Patron - Adapter</h1> 
+            <h1 class="d-flex justify-content-center text-light mt-5 bordeAdapter">Patron - Adapter</h1> 
         </div>
 
         <div class="d-flex justify-content-center espaciado">
@@ -44,7 +43,7 @@
         </div>
     </div>     
     
-    <div class="espaciado text-light">
+    <div class="espaciado text-light espacioAdapter ass">
     <pre>
           <code>
           // Digamos que tienes dos clases con interfaces compatibles:
@@ -108,7 +107,8 @@
         </pre>
     </div>
     
-
+    <?php include '../nav.php'; ?>
+    <?php include '../header.php'; ?>
     </main>
 
 </body>

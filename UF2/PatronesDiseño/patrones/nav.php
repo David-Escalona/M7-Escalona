@@ -32,9 +32,9 @@
                 <hr>
                 <li class="mb-3 fs-6"><a href="../estructura.php" class="text-light decoracion">Patrón de Estructura</a></li>
                 <hr>
-                <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patrón de Creación</a></li>
+                <li class="mb-3 fs-6"><a href="../creacion.php" class="text-light decoracion">Patrón de Creación</a></li>
                 <hr>
-                <li class="mb-3 fs-6"><a href="" class="text-light decoracion">Patrón de Comportamiento</a></li>
+                <li class="mb-3 fs-6"><a href="../comportamiento.php" class="text-light decoracion">Patrón de Comportamiento</a></li>
             </ul>
         </nav>
         
