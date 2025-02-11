@@ -85,9 +85,11 @@
                 <div class="dropdown bg-danger">
                     <button class="dropbtn bg-danger">Patrón de Creación</button>
                     <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="../patrones/factorymethod.php">Factory</a>
+                    <a href="../patrones/abstractfactory.php">Abstract</a>
+                    <a href="../patrones/builder.php">Builder</a>
+                    <a href="../patrones/prototype.php">Prototype</a>
+                    <a href="../patrones/singleton.php">Singleton</a>
                     </div>
                 </div>
 
