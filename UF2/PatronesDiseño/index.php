@@ -62,7 +62,7 @@
         <div class="d-flex justify-content-center mb-5">    
 
         <div class="diseño1">
-            <a href="estructura.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
+            <a href="comportamiento.php"><img src="https://dcreations.es/storage/files/1/cursos/curso-patrones-de-dise%C3%B1o-en-php-gratis/patrones-de-comportamiento-en-php/patrones-de-comportamiento-en-php.webp" class="card-img-top" alt="Patron de Comportamiento"></a>
         </div>
 
         </div>

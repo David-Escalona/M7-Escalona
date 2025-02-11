@@ -55,7 +55,7 @@ body{
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 2500px;
+    height: 2600px;
 }
 
 .bodyBuilder{
@@ -66,6 +66,13 @@ body{
     height: 3700px;
 }
 
+.bodyCommand{
+    background-image: url(https://img.freepik.com/fotos-premium/resumen-fondo-imagenes-fondos-pantalla-ai-generado_643360-118070.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 3700px;
+}
 
 .header{
     width: 250px;
@@ -295,4 +302,16 @@ body{
 
 .mC{
     margin-left: 0px;
+}
+
+.mCo{
+    margin-left: 162px;
+}
+
+.bordeRespon{
+    margin-right: -180px;
+}
+
+.bordeMemento{
+    margin-right: 100px;
 }
