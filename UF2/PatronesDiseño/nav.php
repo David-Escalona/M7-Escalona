@@ -64,11 +64,11 @@
     
     <header class="d-flex flex-column align-items-center text-light bg-danger p-2 fixed-left header">
 
-        <img src="../img/logo.png" alt="Logo" class="mb-4 mt-3" width="200">
+        <img src="https://refactoring.guru/images/content-public/logos/logo-new.png?id=97d554614702483f31e38b32e82d8e34" alt="Logo" class="mb-4 mt-3" width="200">
         
         <nav>
             <ul class="list-unstyled text-star">
-                <li class="mb-3 fs-5"><a href="../index.php" class="text-light decoracion">Home</a></li>
+                <li class="mb-3 fs-5"><a href="./index.php" class="text-light decoracion">Home</a></li>
                 <hr>
 
                 <div class="dropdown bg-danger">
