@@ -66,17 +66,13 @@
           <a class="nav-link" href="blog.html">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link" href="portfolio.html">CV</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="team.html">Team</a>
-            <a class="dropdown-item" href="team-single.html">Team Details</a>
             <a class="dropdown-item" href="career.html">Career</a>
             <a class="dropdown-item" href="career-single.html">Career Details</a>
-            <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-            <a class="dropdown-item" href="pricing.html">Pricing</a></a>
             <a class="dropdown-item" href="faqs.html">FAQ's</a>
           </div>
         </li>
