@@ -1,0 +1,48 @@
+-USER-
+    id.pk
+    name.varchar
+    sourname.varchar
+    email.varchar
+    avatar.text
+    password.text
+    rol.varchar
+    age.int
+    job.varchar
+    dateregister.date
+----------------
+-NEWS-
+    id.pk
+    newdate.date
+    title.varchar
+    subtitle.text
+    thumbnail.text
+    description.text
+----------------
+-PROJECTS-
+    id.pk
+    title.varchar
+    url.varchar
+    thumbnail.text
+    description.text
+----------------
+-TESTIMONIALS-
+    id.pk
+    name.varchar
+    sourname.varchar
+    description.text
+    foto.text
+    rating.int
+----------------
+-COMMENTS-
+    id.pk
+    description.text
+    user_id.pk
+    new_id.pk
+    date.
+    comment_id.null
+----------------
+-FAQ´S-
+    id.pk
+    question
+    answer
+    date

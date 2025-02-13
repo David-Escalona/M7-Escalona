@@ -54,19 +54,19 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">LaLiga</a>
+          <a class="nav-link" href="index.php">Asesorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">Clasificación</a>
+          <a class="nav-link" href="about.html">Mentorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.html">Estadisticas</a>
+          <a class="nav-link" href="services.html">Resultados</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="blog.html">Noticias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Clubes</a>
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
@@ -90,7 +90,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Creative Agency</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Asesiorias TU1MILLON</h1>
       </div>
     </div>
   </div>
