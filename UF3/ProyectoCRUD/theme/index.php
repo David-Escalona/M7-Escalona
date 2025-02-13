@@ -54,25 +54,25 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="index.php">LaLiga</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="about.html">Clasificación</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="services.html">Estadisticas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="blog.html">Noticias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">CV</a>
+          <a class="nav-link" href="portfolio.html">Clubes</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="career.html">Career</a>
-            <a class="dropdown-item" href="career-single.html">Career Details</a>
+            <a class="dropdown-item" href="career.html">Fotos</a>
+            <a class="dropdown-item" href="career-single.html">Videos</a>
             <a class="dropdown-item" href="faqs.html">FAQ's</a>
           </div>
         </li>
