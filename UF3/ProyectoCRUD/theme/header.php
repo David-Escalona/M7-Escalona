@@ -30,12 +30,11 @@
     
 <header class="navigation fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <p class="navbar-brand" href="index.php">Escalona UNIVERSITY</p>
+    <p class="navbar-brand mt-3" href="index.php">Escalona UNIVERSITY</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
