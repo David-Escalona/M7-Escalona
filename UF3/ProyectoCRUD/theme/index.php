@@ -446,7 +446,6 @@
 
 <?php include 'footer.php'; ?>
 
-
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
