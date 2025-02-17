@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
-<html lang="zxx">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -62,7 +55,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-center">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">Mis Servicios</h2>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.</p>
@@ -78,7 +71,7 @@
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-palette"></i>
             </div>
-            <h4 class="mb-4">Design</h4>
+            <h4 class="mb-4">Asesorias</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
           </div>
         </div>
@@ -91,7 +84,7 @@
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
             </div>
-            <h4 class="mb-4">Development</h4>
+            <h4 class="mb-4">Mentorias</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
           </div>
         </div>
@@ -104,7 +97,7 @@
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-announcement"></i>
             </div>
-            <h4 class="mb-4">Marketing</h4>
+            <h4 class="mb-4">Cursos</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
           </div>
         </div>
