@@ -67,7 +67,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
+          <p class="text-light mb-0">Copyright &copy; 2025 a theme by Escalona UNIVERSITY</a>
           </p>
         </div>
         <div class="col-md-6">
