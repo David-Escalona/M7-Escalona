@@ -53,7 +53,7 @@
           <a class="nav-link" href="noticias.php">Noticias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="portfolio.php">Portfolio</a>
+          <a class="nav-link" href="faqs.php">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos</a>

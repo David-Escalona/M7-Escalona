@@ -79,18 +79,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 1");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["IMAGE"] . "<br>";
             } else {
                 echo "No se encontró un usuario";
@@ -105,18 +101,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 1");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -132,18 +124,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 1");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
@@ -165,18 +153,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 2");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["IMAGE"] . "<br>";
             } else {
                 echo "No se encontró un usuario";
@@ -191,18 +175,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 2");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -218,18 +198,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 2");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
@@ -251,18 +227,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 3");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["IMAGE"] . "<br>";
             } else {
                 echo "No se encontró un usuario";
@@ -277,18 +249,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 3");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -304,18 +272,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 3");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
@@ -343,11 +307,8 @@
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["IMAGE"] . "<br>";
             } else {
                 echo "No se encontró un usuario";
@@ -368,9 +329,7 @@
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
