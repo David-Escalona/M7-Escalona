@@ -11,7 +11,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Agen | Bootstrap Agency Template</title>
+  <title>Portfolio</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,51 +69,49 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h2 class="section-title">Mis Servicios</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.</p>
+      <div class="col-lg-10 mx-auto ">
+        <h2 class="section-title text-center">Mis Servicios</h2>
+        <p class="lead text-start">Ofrecemos servicios personalizados de Mentorias y Asesorias, adaptados a las necesidades de cada cliente. Nos especializamos en asesoramiento con un enfoque en calidad, compromiso y resultados. Nuestro objetivo es proporcionar soluciones eficaces y mejorar la experiencia de nuestros clientes de forma profesional y confiable."</p>
         <div class="section-border"></div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-4 mb-4 mb-lg-0">
-        <div class="card hover-bg-secondary shadow py-4 active">
-          <div class="card-body text-center">
-            <div class="position-relative">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body">
+            <div class="position-relative text-center">
               <i
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-palette"></i>
             </div>
-            <h4 class="mb-4">Asesorias</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4 text-center">Asesorias</h4>
+            <p class="text-start">Aqui ecibirás orientación especializada para tomar decisiones estratégicas y resolver desafíos, enfocándonos en soluciones prácticas para tu éxito.</p>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4 mb-lg-0">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
-            <div class="position-relative">
+          <div class="card-body">
+            <div class="position-relative text-center">
               <i
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
             </div>
-            <h4 class="mb-4">Mentorias</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4 text-center">Mentorias</h4>
+            <p class="text-start">Te ofrezco una mentoría personalizada para alcanzar tus metas más rápido, superando obstáculos y desarrollando estrategias clave para tu éxito.</p>
           </div>
         </div>
       </div>
       <div class="col-lg-4 mb-4 mb-lg-0">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
-            <div class="position-relative">
+          <div class="card-body">
+            <div class="position-relative text-center">
               <i
                 class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-announcement"></i>
             </div>
-            <h4 class="mb-4">Cursos</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4 text-center">Cursos</h4>
+            <p class="text-start">Ofrezco cursos prácticos enfocados para que adquieras habilidades y conocimientos, impulsando tu crecimiento personal y profesional.</p>
           </div>
         </div>
       </div>
@@ -122,7 +120,6 @@
 </section>
 
 <?php
-
 require_once 'config.php';
 
 $sql = "SELECT id, name, sourname, description, image, data, rating 
@@ -152,7 +149,7 @@ while ($row = $result->fetch_assoc()) {
           <?php foreach ($testimonios as $item): ?>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="images/<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo $item['name']; ?>">
+                <img src="images/<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo $item['image']; ?>">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $item['name'] . ' ' . $item['sourname']; ?></h5>
                   <span class="text-muted"><?php echo date("F j, Y", strtotime($item['data'])); ?></span>
@@ -187,15 +184,15 @@ while ($row = $result->fetch_assoc()) {
           <div class="col-lg-7 offset-lg-1">
             <div class="row">
               <div class="col-12">
-                <h2 class="text-white">We know What Bait to Use</h2>
+                <h2 class="text-white">Se como ayudarte</h2>
                 <div class="section-border ml-0"></div>
               </div>
               <div class="col-md-6 mb-4">
                 <div class="media">
                   <i class="icon text-gradient-primary ti-vector mr-3"></i>
                   <div class="media-body">
-                    <h4 class="text-white">User Experience</h4>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                    <h4 class="text-white">Resultados Garantizados</h4>
+                    <p class="text-light">Tenemos una gran serie de usuarios con resultados inmediantos garantizados.</p>
                   </div>
                 </div>
               </div>
@@ -203,8 +200,8 @@ while ($row = $result->fetch_assoc()) {
                 <div class="media">
                   <i class="icon text-gradient-primary ti-layout mr-3"></i>
                   <div class="media-body">
-                    <h4 class="text-white">Responsive Layout</h4>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                    <h4 class="text-white">Cursos Adaptados</h4>
+                    <p class="text-light">Cursos adapatados a los horarios de cada usuario.</p>
                   </div>
                 </div>
               </div>
@@ -212,8 +209,8 @@ while ($row = $result->fetch_assoc()) {
                 <div class="media">
                   <i class="icon text-gradient-primary ti-headphone-alt mr-3"></i>
                   <div class="media-body">
-                    <h4 class="text-white">Digital Solutions</h4>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                    <h4 class="text-white">Reuniones Semanales</h4>
+                    <p class="text-light">Reuniones con grupos de usuarios semanales para analizar resultados.</p>
                   </div>
                 </div>
               </div>
@@ -221,8 +218,8 @@ while ($row = $result->fetch_assoc()) {
                 <div class="media">
                   <i class="icon text-gradient-primary ti-ruler-pencil mr-3"></i>
                   <div class="media-body">
-                    <h4 class="text-white">Bootstrap 4x</h4>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                    <h4 class="text-white">Aprendizaje Constante</h4>
+                    <p class="text-light">Aprendizaje diario adaptado a las necesidades de cada usuario.</p>
                   </div>
                 </div>
               </div>
@@ -240,9 +237,9 @@ while ($row = $result->fetch_assoc()) {
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
-      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+      <h2 class="text-gradient-primary">Contacta conmigo!</h2>
+      <p class="h4 font-weight-bold text-white mb-4">Atenderemos cualquier consulta solicitada.</p>
+      <a href="contacto.php" class="btn btn-lg btn-primary">Hablemos</a>
     </div>
   </div>
 </div>
