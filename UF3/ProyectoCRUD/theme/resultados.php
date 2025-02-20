@@ -72,10 +72,32 @@
     <div class="row">
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-palette"></i>
+              
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 1");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
             </div>
             <h4 class="mb-4">
               
@@ -136,10 +158,32 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
+            
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 2");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
             </div>
             <h4 class="mb-4">
 
@@ -200,10 +244,32 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-announcement"></i>
+            
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 3");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+          
             </div>
             <h4 class="mb-4">
 
@@ -264,10 +330,31 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-game mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-game"></i>
+            
+            <?php
+
+            require_once 'config.php';
+
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 4");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+          
             </div>
             <h4 class="mb-4">
 
@@ -275,7 +362,6 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 4");
 
             if (!$result) {
@@ -286,7 +372,6 @@
             if ($result->num_rows > 0) {
                 // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -302,18 +387,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 4");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
@@ -328,10 +409,28 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-crown mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-crown"></i>
+            
+            <?php
+
+            require_once 'config.php';
+
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 5");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+          
             </div>
             <h4 class="mb-4">
 
@@ -339,18 +438,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 5");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -366,18 +461,15 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 5");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
@@ -392,10 +484,28 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
+          <div class="card-body text-start">
             <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-bar-chart mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-bar-chart"></i>
+            
+            <?php
+
+            require_once 'config.php';
+
+            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 6");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                echo "" . $row["IMAGE"] . "<br>";
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+          
             </div>
             <h4 class="mb-4">
 
@@ -403,18 +513,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 6");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["NAME"] . "<br>";
                 echo "" . $row["SOURNAME"];
             } else {
@@ -430,18 +536,14 @@
 
             require_once 'config.php';
 
-            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
             $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 6");
 
             if (!$result) {
                 die("Error en la consulta SQL: " . $mysqli->error);
             }
 
-            // Verificar si hay resultados
             if ($result->num_rows > 0) {
-                // Obtener el primer (y único) resultado
                 $row = $result->fetch_assoc();
-                // Mostrar el NAME y SOURNAME
                 echo "" . $row["SUBTITLE"] . "<br><br>";
                 echo "" . $row["DESCRIPCIO"];
             } else {
