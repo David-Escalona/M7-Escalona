@@ -148,61 +148,91 @@
   </div>
 </section>
 
+<?php
+// Conexión a la base de datos
+require_once 'config.php';
+
+// Obtener el id de la noticia actual desde la URL
+$news_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+// Verificar si se ha proporcionado un id válido para la noticia
+if ($news_id <= 0) {
+    die("Noticia no válida.");
+}
+
+// Consulta SQL para obtener los comentarios únicos de la noticia actual
+$sql = "SELECT DISTINCT c.id, c.description, c.data, u.name, u.sourname 
+        FROM COMMENTS c
+        JOIN USERS u ON c.user_id = u.id
+        WHERE c.news_id = ? 
+        ORDER BY c.data DESC"; // Ordenar comentarios por fecha
+
+// Preparar la consulta para evitar inyecciones SQL
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("i", $news_id); // Vincular el id de la noticia
+
+// Ejecutar la consulta
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Verificar si la consulta fue exitosa
+if (!$result) {
+    die("Error en la consulta SQL: " . $mysqli->error);
+}
+
+// Almacenar los comentarios en un arreglo
+$comments = [];
+while ($row = $result->fetch_assoc()) {
+    $comments[] = $row;
+}
+?>
+
 <section>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <div class="p-5 mb-4">
-          <div class="media border-bottom py-4">
-            <img src="images/user-1.jpg" class="img-fluid align-self-start mr-3" alt="">
-            <div class="media-body">
-              <h5 class="mb-0 text-secondary">Carole Marvin.</h5>
-              <span class="mr-3">15 january 2015 At 10:30 pm</span>
-              <a href="#" class="btn btn-transparent py-1 px-2 "><i class="ti-share-alt"></i> Reply</a>
-              <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                definitionem.</p>
-              <div class="media my-5">
-                <img src="images/user-2.jpg" class="img-fluid align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <h5 class="mb-0 text-secondary">Jaquan Rolfson.</h5>
-                  <span class="mr-3">15 january 2015 At 10:30 pm</span>
-                  <a href="#" class="btn btn-transparent py-1 px-2 "><i class="ti-share-alt"></i> Reply</a>
-                  <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                    definitionem.</p>
-                </div>
+        <h2 class="mb-4">Comentarios</h2>
+        
+        <!-- Mostrar los comentarios -->
+        <?php if (!empty($comments)): ?>
+          <?php foreach ($comments as $comment): ?>
+            <div class="media border-bottom py-4">
+              <img src="images/user-1.jpg" class="img-fluid align-self-start mr-3" alt="">
+              <div class="media-body">
+                <h5 class="mb-0 text-secondary"><?php echo $comment['name'] . ' ' . $comment['sourname']; ?></h5>
+                <span class="mr-3"><?php echo date("F j, Y, g:i a", strtotime($comment['data'])); ?></span>
+                <a href="#" class="btn btn-transparent py-1 px-2"><i class="ti-share-alt"></i> Reply</a>
+                <p><?php echo $comment['description']; ?></p>
               </div>
             </div>
-          </div>
-          <div class="media py-4">
-            <img src="images/user-1.jpg" class="img-fluid align-self-start mr-3" alt="">
-            <div class="media-body">
-              <h5 class="mb-0 text-secondary">Bruce Bernier.</h5>
-              <span class="mr-3">15 january 2015 At 10:30 pm</span>
-              <a href="#" class="btn btn-transparent py-1 px-2 "><i class="ti-share-alt"></i> Reply</a>
-              <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
-                definitionem.</p>
-            </div>
-          </div>
-        </div>
-        <h4 class="mb-3 pb-3 text-secondary">Leave a Comment</h4>
-        <form action="#" class="row">
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p>No hay comentarios para esta noticia.</p>
+        <?php endif; ?>
+
+        <h4 class="mb-3 pb-3 text-secondary">Deja un Comentario</h4>
+        
+        <!-- Formulario para enviar un nuevo comentario -->
+        <form action="submit_comment.php" method="POST" class="row">
           <div class="col-12">
-            <textarea name="comment" id="comment" placeholder="Message" class="form-control mb-4 border"></textarea>
+            <textarea name="comment" id="comment" placeholder="Mensaje" class="form-control mb-4 border" required></textarea>
           </div>
           <div class="col-md-5">
-            <input type="text" name="name" id="name" class="form-control mb-4 mb-lg-0 border" placeholder="Name">
+            <input type="text" name="name" id="name" class="form-control mb-4 mb-lg-0 border" placeholder="Nombre" required>
           </div>
           <div class="col-md-5">
-            <input type="email" name="Email" id="Email" class="form-control mb-4 mb-lg-0 border" placeholder="Email">
+            <input type="email" name="email" id="email" class="form-control mb-4 mb-lg-0 border" placeholder="Correo Electrónico" required>
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-secondary rounded-0">Send</button>
+            <input type="hidden" name="news_id" value="<?php echo $news_id; ?>"> <!-- ID de la noticia -->
+            <button type="submit" class="btn btn-secondary rounded-0">Enviar</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- blog -->
 <section class="section">
