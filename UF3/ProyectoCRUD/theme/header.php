@@ -56,14 +56,6 @@
           <a class="nav-link" href="portfolio.php">Portfolio</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="career.html">Fotos</a>
-            <a class="dropdown-item" href="career-single.html">Videos</a>
-            <a class="dropdown-item" href="faqs.html">FAQ's</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="career.html">Tu1Centimo</a>

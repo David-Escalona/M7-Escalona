@@ -31,10 +31,22 @@
 
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <style>
+
+  body{
+    font-family: comfortaa;
+  }
+
+  </style>
 
 </head>
 
@@ -47,7 +59,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">Our Services</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Resultados</h1>
       </div>
     </div>
   </div>
@@ -65,8 +77,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-palette"></i>
             </div>
-            <h4 class="mb-4">Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+              
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 1");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p class="d-flex justify-content-start">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 1");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
@@ -77,8 +141,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
             </div>
-            <h4 class="mb-4">Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 2");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p>
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 2");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
@@ -89,8 +205,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-announcement"></i>
             </div>
-            <h4 class="mb-4">Marketing</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 3");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p>
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 3");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
@@ -101,8 +269,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-game mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-game"></i>
             </div>
-            <h4 class="mb-4">Apps</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 4");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p>
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 4");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
@@ -113,8 +333,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-crown mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-crown"></i>
             </div>
-            <h4 class="mb-4">Branding</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 5");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p>
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 5");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
@@ -125,8 +397,60 @@
               <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-bar-chart mb-5 d-inline-block text-white"></i>
               <i class="icon-lg icon-watermark text-white ti-bar-chart"></i>
             </div>
-            <h4 class="mb-4">Analytics</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 6");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["NAME"] . "<br>";
+                echo "" . $row["SOURNAME"];
+            } else {
+                echo "No se encontró un usuario con id 1.";
+            }
+
+            ?>
+
+            </h4>
+            <p>
+
+            <?php
+
+            require_once 'config.php';
+
+            // Realizar la consulta para obtener el NAME y el SOURNAME del id 1
+            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 6");
+
+            if (!$result) {
+                die("Error en la consulta SQL: " . $mysqli->error);
+            }
+
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                // Obtener el primer (y único) resultado
+                $row = $result->fetch_assoc();
+                // Mostrar el NAME y SOURNAME
+                echo "" . $row["SUBTITLE"] . "<br><br>";
+                echo "" . $row["DESCRIPCIO"];
+            } else {
+                echo "No se encontró un usuario";
+            }
+
+            ?>
+
+            </p>
           </div>
         </div>
       </div>
