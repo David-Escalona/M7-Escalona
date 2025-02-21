@@ -25,12 +25,92 @@
     <!-- Main Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <title>Document</title>
+
+    <style>
+        /* Estilo básico de la barra de navegación */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Esto separa los elementos: el título a la izquierda y el menú a la derecha */
+            padding: 10px 40px; /* Aumenté el espacio lateral en la barra de navegación */
+            align-items: center; /* Alinea verticalmente los elementos */
+        }
+
+        /* Estilo del título "UNIVERSITY" */
+        .navbar .navbar-brand {
+            color: white;
+            font-size: 24px; /* Aumenté el tamaño del texto para que sea más prominente */
+            margin-right: 100px; /* Aumento el margen derecho para más espacio */
+        }
+
+        /* Estilo de los enlaces del menú */
+        .navbar a {
+            color: white;
+            padding: 14px 25px; /* Aumenté el espacio alrededor de los enlaces */
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Estilo del contenedor del dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 0 15px; /* Aumento el margen entre el dropdown y los demás enlaces */
+        }
+
+        /* El contenido del dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #343a40;
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Estilo de los elementos dentro del dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        /* Cambiar el color cuando el mouse está sobre un ítem */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Mostrar el dropdown cuando se pasa el mouse */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Asegura que los items del menú estén en una línea */
+        .navbar nav {
+            display: flex;
+        }
+    </style>
+
 </head>
 <body>
     
-<header class="navigation fixed-top">
+<header class="navigation fixed-top navbar">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <p class="navbar-brand mt-3" href="index.php">Escalona UNIVERSITY</p>
+    <p class="navbar-brand mt-3" href="index.php">UNIVERSITY</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -55,19 +135,22 @@
         <li class="nav-item">
           <a class="nav-link" href="portfolio.php">Portfolio</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="career.html">Tu1Centimo</a>
-            <a class="dropdown-item" href="career-single.html">Tu1Euro</a>
-            <a class="dropdown-item" href="faqs.html">Tu1Billete</a>
-            <a class="dropdown-item" href="career-single.html">Tu1Millon</a>
-            <a class="dropdown-item" href="faqs.html">Tu1Billon</a>
-          </div>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contactame</a>
+          <a class="nav-link" href="contacto.php">Contactame</a>
         </li>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Cursos</a>
+            <div class="dropdown-content">
+                <a href="planes.php">Escoje tu Plan</a>
+                <a href="#">Tu1Centimo</a>
+                <a href="#">Tu1Euro</a>
+                <a href="#">Tu1Billete</a>
+                <a href="#">Tu1Millon</a>
+                <a href="#">Tu1Billon</a>
+                <a href="#">Tu1S</a>
+            </div>
+        </div>
+        
       </ul>
     </div>
   </nav>
