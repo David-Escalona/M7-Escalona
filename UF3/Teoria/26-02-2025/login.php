@@ -1,14 +1,15 @@
 <?php
 
-    session_start();
     require_once('config.php');
+
+    $loginMessage = '';
 
     //COMPROBAR QUE EL FORMULARIO HA SIDO ENVIADO
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     //GUARDAMOS DATOS DEL FORMULARIO
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $PASSWORD = $_POST['PASSWORD'];
 
     //EJECUTAR LA CONSULTA
     $result = $mysqli->query("SELECT * FROM USERS WHERE email = '$email' LIMIT 1");
@@ -18,10 +19,14 @@
         $user = $result->fetch_assoc();
 
     //COMPROBAR SI LA CONTRASEÑA ES CORRECTA
-    if(password_verify($paswword, $user['password'])){
+    if(password_verify($password, $user['PASSWORD'])){
         $_SESSION['user'] = $user;
-        header('Location: index.php');
+        $loginMessage = 'Inicio de sesión correcto';
+        } else {
+            $loginMessage = 'Contraseña incorrecta';
         }
+    } else {
+        $loginMessage = 'Usuario no encontrado';
     }
 
     }
@@ -35,18 +40,18 @@
     <title>login</title>
 </head>
 <body>
-    <h1>inicio de sesion</h1>
-    <form action="" method="POST">
-    
-    <label for="name">Email:</label><br>
-    <input type="email" id="email" name="email" require><br>
+    <h1>Inicio de sesión</h1>
+    <?php if ($loginMessage): ?>
+        <p><?php echo $loginMessage; ?></p>
+    <?php endif; ?>
+    <form action="login.php" method="POST">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
 
-    <label for="name">Contraseña:</label><br>
-    <input type="password" id="password" name="password" require><br>
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br>
 
-    <input type="submit" value="Registrate">
-
+        <input type="submit" value="Iniciar sesión">
     </form>
-
 </body>
 </html>
