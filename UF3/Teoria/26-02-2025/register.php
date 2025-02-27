@@ -10,13 +10,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = $_POST['email'];
     $PASSWORD = $_POST['PASSWORD'];
     $avatar = $_POST['avatar'];
+    $rol = $_POST['rol'];
 
     //CIFRAR LA CONTRASEÑA CON PASSWORD_HASH
     $passwordHashed = password_hash($PASSWORD, PASSWORD_DEFAULT);
 
     //PREPARAR LA CONSULTA ANTES DE INSERTAR PARA EVITAR EL SQL INJECTION
     $stmt = $mysqli->prepare(
-        "INSERT INTO USERS (NAME, sourname, email ,avatar, PASSWORD, rol, age, job, data_registre) VALUES (?, ?, ?, ?, ?, 'user', ?, ?, NOW())"
+        "INSERT INTO USERS (NAME, sourname, email ,avatar, PASSWORD, rol, age, job, data_registre) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())"
     );
 
     //COMPROBAR QUE LA PREPARACION TUVO EXITO
@@ -26,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
     //BINDEAR LOS PARAMETROS
-    $stmt->bind_param('sssssis', $NAME, $sourname, $email, $avatar, $passwordHashed, $age, $job);
+    $stmt->bind_param('ssssssis', $NAME, $sourname, $email, $avatar, $passwordHashed, $rol, $age, $job);
 
     //EJECUTAR LA CONSULTA
     if ($stmt->execute()) {
@@ -68,6 +69,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         <label for="avatar">Avatar:</label><br>
         <input type="text" id="avatar" name="avatar" required><br>
+
+        <label for="rol">Rol:</label><br>
+        <select id="rol" name="rol" required>
+            <option value="user">Usuario</option>
+            <option value="admin">Administrador</option>
+        </select><br>
 
         <input type="submit" value="Registrate">
     </form>

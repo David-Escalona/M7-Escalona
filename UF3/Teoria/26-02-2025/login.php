@@ -1,15 +1,15 @@
 <?php
+session_start();
+require_once('config.php');
 
-    require_once('config.php');
+$loginMessage = '';
 
-    $loginMessage = '';
-
-    //COMPROBAR QUE EL FORMULARIO HA SIDO ENVIADO
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+//COMPROBAR QUE EL FORMULARIO HA SIDO ENVIADO
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     //GUARDAMOS DATOS DEL FORMULARIO
     $email = $_POST['email'];
-    $PASSWORD = $_POST['PASSWORD'];
+    $password = $_POST['password'];
 
     //EJECUTAR LA CONSULTA
     $result = $mysqli->query("SELECT * FROM USERS WHERE email = '$email' LIMIT 1");
@@ -18,18 +18,23 @@
     if($result && $result->num_rows > 0){
         $user = $result->fetch_assoc();
 
-    //COMPROBAR SI LA CONTRASEÑA ES CORRECTA
-    if(password_verify($password, $user['PASSWORD'])){
-        $_SESSION['user'] = $user;
-        $loginMessage = 'Inicio de sesión correcto';
+        //COMPROBAR SI LA CONTRASEÑA ES CORRECTA
+        if(password_verify($password, $user['PASSWORD'])){
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['NAME'];
+            $_SESSION['user_email'] = $user['email'];
+            $_SESSION['user_avatar'] = $user['avatar'];
+            $_SESSION['user_rol'] = $user['rol'];
+            $loginMessage = 'Inicio de sesión correcto';
+            header('Location: index.php');
+            exit();
         } else {
             $loginMessage = 'Contraseña incorrecta';
         }
     } else {
         $loginMessage = 'Usuario no encontrado';
     }
-
-    }
+}
 ?>
 
 <!DOCTYPE html>
