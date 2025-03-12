@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'config.php';
 
 //COMPROBAR SI EL FORMULARIO HA SIDO ENVIADO

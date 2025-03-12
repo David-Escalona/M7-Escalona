@@ -150,7 +150,12 @@
                 <a href="#">Tu1S</a>
             </div>
         </div>
-        
+        <li class="nav-item">
+          <a class="nav-link" href="inicio.php">Inciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registro.php">Registrarse</a>
+        </li>
       </ul>
     </div>
   </nav>
