@@ -31,80 +31,79 @@ $users = $resultUsers->fetch_all(MYSQLI_ASSOC);
     <title>Panel de Administrador</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     
-    <h1>Panel de Administrador</h1>
-    <h2>Testimonios</h2>
+    <div class="container">
+        <div class="d-flex justify-content-center my-4">
+            <h1>Panel de Administrador</h1>
+        </div>
 
-    <table class="table table-bordered" border="1">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Descripción</th>
-                <th>Imagen</th>
-                <th>Fecha</th>
-                <th>Rating</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($testimonis as $item): ?>
+        <h2>Testimonios</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
                 <tr>
-                    <td><?= $item['name']; ?></td>
-                    <td><?= $item['sourname']; ?></td>
-                    <td><?= $item['description']; ?></td>
-                    <td><img src="<?= $item['image']; ?>" alt="Imagen" style="width: 50px; height: 50px;"></td>
-                    <td><?= $item['data']; ?></td>
-                    <td><?= $item['rating']; ?></td>
-                    <td>
-                        <a href="users/edit-user.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                        <a href="../testimonials/delete-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
-                    </td>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Fecha</th>
+                    <th>Rating</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach($testimonis as $item): ?>
+                    <tr>
+                        <td><?= $item['name']; ?></td>
+                        <td><?= $item['sourname']; ?></td>
+                        <td><?= $item['description']; ?></td>
+                        <td><img src="<?= $item['image']; ?>" alt="Imagen" style="width: 50px; height: 50px;"></td>
+                        <td><?= $item['data']; ?></td>
+                        <td><?= $item['rating']; ?></td>
+                        <td>
+                            <a href="users/edit-user.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="../testimonials/delete-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-danger btn-sm">Borrar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <h2>Noticias</h2>
-
-    <h2>Proyectos</h2>
-
-    <h2>USERS</h2>
-
-    <table class="table table-bordered" border="1">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>gmail</th>
-                <th>Imagen</th>
-                <th>rol</th>
-                <th>edad</th>
-                <th>trabajo</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($users as $item): ?>
+        <h2>Usuarios</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
                 <tr>
-                    <td><?= $item['NAME']; ?></td>
-                    <td><?= $item['sourname']; ?></td>
-                    <td><?= $item['email']; ?></td>
-                    <td><img src="<?= $item['avatar']; ?>" alt="Imagen" style="width: 50px; height: 50px;"></td>
-                    <td><?= $item['rol']; ?></td>
-                    <td><?= $item['age']; ?></td>
-                    <td><?= $item['job']; ?></td>
-                    <td>
-                        <a href="users/edit-user.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                        <a href="../testimonials/delete-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
-                    </td>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Imagen</th>
+                    <th>Rol</th>
+                    <th>Edad</th>
+                    <th>Trabajo</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                <?php foreach($users as $item): ?>
+                    <tr>
+                        <td><?= $item['NAME']; ?></td>
+                        <td><?= $item['sourname']; ?></td>
+                        <td><?= $item['email']; ?></td>
+                        <td><img src="<?= $item['avatar']; ?>" alt="Imagen" style="width: 50px; height: 50px;"></td>
+                        <td><?= $item['rol']; ?></td>
+                        <td><?= $item['age']; ?></td>
+                        <td><?= $item['job']; ?></td>
+                        <td>
+                            <a href="users/edit-user.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="../testimonials/delete-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-danger btn-sm">Borrar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="../../plugins/bootstrap/bootstrap.min.js"></script>
