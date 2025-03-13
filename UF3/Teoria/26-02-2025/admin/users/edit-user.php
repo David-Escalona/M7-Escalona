@@ -1,5 +1,4 @@
 <?php
-
 require_once '../../config.php';
 
 if (!isset($_GET['id'])) {
@@ -9,33 +8,29 @@ if (!isset($_GET['id'])) {
 
 $id = (int) $_GET['id'];
 $result = $mysqli->query("SELECT * FROM USERS WHERE id = $id");
-                                        //TESTIMONIS
 
-$user = $result->fetch_assoc(); 
-//$testimonis
+$user = $result->fetch_assoc();
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-if($_SERVRE['REQUEST_METHOD'] === 'POST'){
+    $NAME = $_POST['NAME'];
+    $sourname = $_POST['sourname'];
+    $email = $_POST['email'];
+    $avatar = $_POST['avatar'];
+    $rol = $_POST['rol'];
+    $age = $_POST['age'];
 
-    $NAME = $mysqli->$_POST['NAME'];
-    $sourname = $mysqli->$_POST['sourname'];
-    $email = $mysqli->$_POST['email'];
-    $avatar = $mysqli->$_POST['avatar'];
-    $PASSWORD = $mysqli->$_POST['PASSWORD'];
-    $rol = $mysqli->$_POST['rol'];
-    $age = $mysqli->$_POST['age'];
-    $data_registre = $mysqli->$_POST['data_registre'];
+    $query = "UPDATE USERS SET NAME = ?, sourname = ?, email = ?, avatar = ?, rol = ?, age = ? WHERE id = ?";
+    $stmt = $mysqli->prepare($query);
+    if ($stmt === false) {
+        die('Error en la preparación de la consulta: ' . $mysqli->error);
+    }
+    $stmt->bind_param('ssssssi', $NAME, $sourname, $email, $avatar, $rol, $age, $id);
+    $stmt->execute();
 
+    header('Location: ../admin.php');
+    exit();
 }
-
-$query = "UPDATE USERS SET name = ?, sourname = ?, email = ?, avatar = ?, PASSWORD = ?, rol = ?, age = ?, data_registre = ? WHERE id = ?";
-$stmt = $mysqli->prepare($query);
-$stmt->bind_param('ssssssssi', $name, $sourname, $email, $avatar, $PASSWORD, $rol, $age, $data_registre, $id);
-$stmt->execute();
-
-header('Location: ../adminPanel.php');
-exit();
-
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +42,10 @@ exit();
 </head>
 <body>
     
-    <form action="POST">
+    <form action="" method="POST">  
 
         <label for="name">Nombre</label>
-        <input type="text" name="name" value="<?= $user['name']; ?>">
+        <input type="text" name="NAME" value="<?= $user['NAME']; ?>">
 
         <label for="sourname">Apellidos</label>
         <input type="text" name="sourname" value="<?= $user['sourname']; ?>">

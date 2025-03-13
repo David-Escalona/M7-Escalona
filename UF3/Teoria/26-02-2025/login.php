@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     } else {
         $loginMessage = 'Usuario no encontrado';
     }
+    header('Location: adminPanel.php');
 }
 ?>
 
