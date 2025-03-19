@@ -44,14 +44,14 @@
         /* Estilo del título "UNIVERSITY" */
         .navbar .navbar-brand {
             color: white;
-            font-size: 24px; /* Aumenté el tamaño del texto para que sea más prominente */
-            margin-right: 100px; /* Aumento el margen derecho para más espacio */
+            font-size: 24px;
+            margin-right: 100px;
         }
 
         /* Estilo de los enlaces del menú */
         .navbar a {
             color: white;
-            padding: 14px 25px; /* Aumenté el espacio alrededor de los enlaces */
+            padding: 14px 25px;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
@@ -66,7 +66,7 @@
         .dropdown {
             position: relative;
             display: inline-block;
-            margin: 0 15px; /* Aumento el margen entre el dropdown y los demás enlaces */
+            margin: 0 15px;
         }
 
         /* El contenido del dropdown */
@@ -76,7 +76,7 @@
             background-color: #343a40;
             min-width: 180px;
             z-index: 1;
-            border-radius: 5px; /* Bordes redondeados */
+            border-radius: 5px;
         }
 
         /* Estilo de los elementos dentro del dropdown */
@@ -88,7 +88,6 @@
             font-size: 14px;
         }
 
-        /* Cambiar el color cuando el mouse está sobre un ítem */
         .dropdown-content a:hover {
             background-color: #ddd;
             color: black;
@@ -138,20 +137,19 @@
           </div>
         </div>
         
-        <?php if(isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['user_id'])): ?>
           <div class="dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="dropbtn">
               <img src="<?= $_SESSION['user_avatar'] ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
               <?= $_SESSION['user_name'] ?>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#">Perfil</a>
-              <a class="dropdown-item" href="#">Configuración</a>
-              <?php if($_SESSION['user_rol'] === 'admin'): ?>
-                <a class="dropdown-item" href="admin.php">Panel Admin</a>
+            <div class="dropdown-content">
+              <a href="perfil.php">Perfil</a>
+              <?php if ($_SESSION['user_rol'] === 'admin'): ?>
+                <a href="configuracion.php">Configuración</a>
+                <a href="admin.php">Panel Admin</a>
               <?php endif; ?>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="logout.php">Cerrar Sesión</a>
+              <a href="logout.php" class="text-danger">Cerrar Sesión</a>
             </div>
           </div>
         <?php else: ?>
@@ -163,36 +161,20 @@
   </nav>
 </header>
 
-<!-- jQuery -->
+<!-- Scripts -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
 <script src="plugins/slick/slick.min.js"></script>
-<!-- venobox -->
 <script src="plugins/venobox/venobox.min.js"></script>
-<!-- shuffle -->
 <script src="plugins/shuffle/shuffle.min.js"></script>
-<!-- apear js -->
 <script src="plugins/counto/apear.js"></script>
-<!-- counter -->
 <script src="plugins/counto/counTo.js"></script>
-<!-- card slider -->
 <script src="plugins/card-slider/js/card-slider-min.js"></script>
-<!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
 <script src="plugins/google-map/gmap.js"></script>
-
-<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
-<!-- Popper.js (necesario para los tooltips y dropdowns) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-<!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<!-- Main Script -->
 <script src="js/script.js"></script>
 
 </body>
