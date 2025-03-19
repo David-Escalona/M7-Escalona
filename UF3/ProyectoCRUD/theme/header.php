@@ -147,7 +147,7 @@
               <a href="perfil.php">Perfil</a>
               <?php if ($_SESSION['user_rol'] === 'admin'): ?>
                 <a href="configuracion.php">Configuración</a>
-                <a href="admin.php">Panel Admin</a>
+                <a href="/admin/users/adminPanel.php">Panel Admin</a>
               <?php endif; ?>
               <a href="logout.php" class="text-danger">Cerrar Sesión</a>
             </div>
