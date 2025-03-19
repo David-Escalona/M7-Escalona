@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_avatar'] = $user['avatar'];
             $_SESSION['user_rol'] = $user['rol'];
-            header('Location: indice.php');
+            header('Location: indiceIniciado.php');
             exit();
         } else {
             $loginMessage = 'Contraseña incorrecta';

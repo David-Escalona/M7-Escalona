@@ -117,45 +117,47 @@
     </button>
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="historia.php">Mi Historia</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Asesorias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mentorias.php">Mentorias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="resultados.php">Resultados</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="noticias.php">Noticias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="portfolio.php">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.php">Contactame</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="historia.php">Mi Historia</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.php">Asesorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="mentorias.php">Mentorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="resultados.php">Resultados</a></li>
+        <li class="nav-item"><a class="nav-link" href="noticias.php">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.php">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.php">Contáctame</a></li>
+        
         <div class="dropdown">
-            <a href="#" class="dropbtn">Cursos</a>
-            <div class="dropdown-content">
-                <a href="planes.php">Escoje tu Plan</a>
-                <a href="#">Tu1Centimo</a>
-                <a href="#">Tu1Euro</a>
-                <a href="#">Tu1Billete</a>
-                <a href="#">Tu1Millon</a>
-                <a href="#">Tu1Billon</a>
-                <a href="#">Tu1S</a>
-            </div>
+          <a href="#" class="dropbtn">Cursos</a>
+          <div class="dropdown-content">
+            <a href="planes.php">Escoge tu Plan</a>
+            <a href="#">Tu1Centimo</a>
+            <a href="#">Tu1Euro</a>
+            <a href="#">Tu1Billete</a>
+            <a href="#">Tu1Millón</a>
+            <a href="#">Tu1Billón</a>
+            <a href="#">Tu1S</a>
+          </div>
         </div>
-        <li class="nav-item">
-          <a class="nav-link" href="inicio.php">Inciar Sesión</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registro.php">Registrarse</a>
-        </li>
+        
+        <?php if(isset($_SESSION['user_id'])): ?>
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="<?= $_SESSION['user_avatar'] ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+              <?= $_SESSION['user_name'] ?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Configuración</a>
+              <?php if($_SESSION['user_rol'] === 'admin'): ?>
+                <a class="dropdown-item" href="admin.php">Panel Admin</a>
+              <?php endif; ?>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" href="logout.php">Cerrar Sesión</a>
+            </div>
+          </div>
+        <?php else: ?>
+          <li class="nav-item"><a class="nav-link" href="inicio.php">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.php">Registrarse</a></li>
+        <?php endif; ?>
       </ul>
     </div>
   </nav>
