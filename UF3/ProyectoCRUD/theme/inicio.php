@@ -45,42 +45,74 @@ ob_end_flush(); // Envía la salida almacenada en el buffer
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-  <!-- venobox css -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  <!-- card slider -->
-  <link rel="stylesheet" href="plugins/card-slider/css/style.css">
-
-  <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  
-  <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <!-- venobox css -->
+    <link rel="stylesheet" href="plugins/venobox/venobox.css">
+    <!-- card slider -->
+    <link rel="stylesheet" href="plugins/card-slider/css/style.css">
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
+
+        body{
+            font-family: Comfortaa;
+        }
+
+        .roundeds {
+            border-radius: 30px;
+            padding: 10px;
+            border: none;
+        }
+
+        .header {
+            width: 100%;
+            padding: 40px;
+            background-color: black;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            margin-bottom: 100px;
+            font-size: 40px;
+            
         }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         .card {
             width: 100%;
             max-width: 500px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .mensaje {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
         }
     </style>
 </head>
 <body>
+    
+    <div class="header">
+        <a href="registro.php">REGISTRARSE</a>
+    </div>
+
     <div class="container">
         <?php if ($loginMessage): ?>
             <div class="alert alert-danger text-center"><?php echo $loginMessage; ?></div>
@@ -98,33 +130,33 @@ ob_end_flush(); // Envía la salida almacenada en el buffer
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primary w-100 roundeds">Iniciar Sesión</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- jQuery -->
+<!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- venobox -->
-<script src="plugins/venobox/venobox.min.js"></script>
-<!-- shuffle -->
-<script src="plugins/shuffle/shuffle.min.js"></script>
-<!-- apear js -->
-<script src="plugins/counto/apear.js"></script>
-<!-- counter -->
-<script src="plugins/counto/counTo.js"></script>
-<!-- card slider -->
-<script src="plugins/card-slider/js/card-slider-min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- venobox -->
+    <script src="plugins/venobox/venobox.min.js"></script>
+    <!-- shuffle -->
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <!-- apear js -->
+    <script src="plugins/counto/apear.js"></script>
+    <!-- counter -->
+    <script src="plugins/counto/counTo.js"></script>
+    <!-- card slider -->
+    <script src="plugins/card-slider/js/card-slider-min.js"></script>
+    <!-- google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
 </body>
 </html>

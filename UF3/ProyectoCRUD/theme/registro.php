@@ -102,7 +102,6 @@ ob_end_flush(); // Finaliza el buffer de salida
 
 <body>
 
-    <!-- Header con opción para iniciar sesión -->
     <div class="header">
         <a href="inicio.php">INICIAR SESIÓN</a>
     </div>
