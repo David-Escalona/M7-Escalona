@@ -143,7 +143,8 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
 </head>
 <body>
 
-    <?php include '../../header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+
 
     <div class="container">
         <h1>Panel de Administrador</h1>
