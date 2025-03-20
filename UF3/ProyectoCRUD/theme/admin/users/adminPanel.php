@@ -168,9 +168,10 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
                         <td><?= htmlspecialchars($item['sourname']); ?></td>
                         <td><?= htmlspecialchars($item['description']); ?></td>
                         <td><img src="<?= htmlspecialchars($item['image']); ?>" alt="Imagen"></td>
-                        <td><?= htmlspecialchars($item['date']); ?></td>
+                        <td><?= htmlspecialchars($item['data']); ?></td>
                         <td><?= htmlspecialchars($item['rating']); ?></td>
                         <td>
+                            <a href="../testimonials/add-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
                             <a href="../testimonials/edit-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
                             <a href="../testimonials/delete-testimonials.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
@@ -200,6 +201,7 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
                         <td><img src="<?= htmlspecialchars($item['thumbnail']); ?>" alt="Imagen"></td>
                         <td><?= htmlspecialchars($item['description']); ?></td>
                         <td>
+                            <a href="../noticias/add-noticias.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
                             <a href="../noticias/edit-noticias.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
                             <a href="../noticias/delete-noticias.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
@@ -208,27 +210,28 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
             </tbody>
         </table>
 
-        <h2>Proyectos</h2>
+        <h2>Projectos</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Título</th>
                     <th>URL</th>
                     <th>Descripción</th>
-                    <th>Imagen</th>
+                    <th>Thumbnail</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($proyectos as $item): ?>
+                <?php foreach ($proyectos  as $item): ?>
                     <tr>
                         <td><?= htmlspecialchars($item['title']); ?></td>
-                        <td><a href="<?= htmlspecialchars($item['url']); ?>" target="_blank"><?= htmlspecialchars($item['url']); ?></a></td>
-                        <td><?= htmlspecialchars($item['description']); ?></td>
-                        <td><img src="<?= htmlspecialchars($item['image']); ?>" alt="Imagen"></td>
+                        <td><?= htmlspecialchars($item['url']); ?></td>
+                        <td><?= htmlspecialchars($item['descripcio']); ?></td>
+                        <td><img src="<?= htmlspecialchars($item['thumbnail']); ?>" alt="Imagen"></td>
                         <td>
-                            <a href="../projectos/edit-projectos.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                            <a href="../projectos/delete-projectos.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
+                            <a href="../noticias/add-noticias.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
+                            <a href="../noticias/edit-noticias.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
+                            <a href="../noticias/delete-noticias.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

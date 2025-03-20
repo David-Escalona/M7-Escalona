@@ -1,60 +1,44 @@
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
-<html lang="zxx">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <title>Agen | Bootstrap Agency Template</title>
-
-  <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <!-- ** Plugins Needed for the Project ** -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-  <!-- venobox css -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  <!-- card slider -->
-  <link rel="stylesheet" href="plugins/card-slider/css/style.css">
 
-  <!-- Main Stylesheet -->
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+  <link rel="stylesheet" href="plugins/card-slider/css/style.css">
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-  
-  <!--Favicon-->
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
   <style>
-
-  body{
-    font-family: comfortaa;
-  }
-
+    body {
+      font-family: 'Comfortaa', sans-serif;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
   </style>
-
 </head>
 
 <body>
 
 <?php include 'header.php'; ?>
-
-<!-- page-title -->
 <section class="page-title bg-cover" data-background="images/backgrounds/page-title.jpg">
   <div class="container">
     <div class="row">
@@ -64,503 +48,69 @@
     </div>
   </div>
 </section>
-<!-- /page-title -->
 
-<!-- service -->
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-              
-            <?php
+      
+      <?php
+      require_once 'config.php';
 
-            require_once 'config.php';
+      // Obtener los proyectos
+      $query = "SELECT id, title, descripcio, thumbnail FROM PROJECTS";
+      $result = $mysqli->query($query);
 
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 1");
+      if (!$result) {
+          die("Error en la consulta SQL: " . $mysqli->error);
+      }
 
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
+      // Iterar sobre los proyectos y mostrarlos en la página
+      while ($row = $result->fetch_assoc()) {
+      ?>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card hover-bg-secondary shadow py-4">
+            <div class="card-body text-start">
+              <div class="position-relative">
+                <img src="<?= $row['thumbnail'] ?>" alt="Imagen del proyecto">
+              </div>
+              <h4 class="mb-4"><?= $row['title'] ?></h4>
+              <p><?= $row['descripcio'] ?></p>
             </div>
-            <h4 class="mb-4">
-              
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 1");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p class="d-flex justify-content-start">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 1");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-            
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 2");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </div>
-            <h4 class="mb-4">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 2");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p>
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 2");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-            
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 3");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-          
-            </div>
-            <h4 class="mb-4">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 3");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p>
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 3");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-            
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 4");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-          
-            </div>
-            <h4 class="mb-4">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 4");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p>
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 4");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-            
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 5");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-          
-            </div>
-            <h4 class="mb-4">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 5");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p>
-
-            <?php
-
-            require_once 'config.php';
-
-            
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 5");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-start">
-            <div class="position-relative">
-            
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT IMAGE FROM PROJECTS WHERE id = 6");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["IMAGE"] . "<br>";
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-          
-            </div>
-            <h4 class="mb-4">
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT NAME, SOURNAME FROM USERS WHERE id = 6");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["NAME"] . "<br>";
-                echo "" . $row["SOURNAME"];
-            } else {
-                echo "No se encontró un usuario con id 1.";
-            }
-
-            ?>
-
-            </h4>
-            <p>
-
-            <?php
-
-            require_once 'config.php';
-
-            $result = $mysqli->query("SELECT SUBTITLE, DESCRIPCIO FROM PROJECTS WHERE id = 6");
-
-            if (!$result) {
-                die("Error en la consulta SQL: " . $mysqli->error);
-            }
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                echo "" . $row["SUBTITLE"] . "<br><br>";
-                echo "" . $row["DESCRIPCIO"];
-            } else {
-                echo "No se encontró un usuario";
-            }
-
-            ?>
-
-            </p>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
+    
     </div>
   </div>
 </section>
-<!-- /service -->
 
-<!-- feature -->
 <?php include 'feature.php'?>
-<!-- /feature -->
 
-<!-- call to action -->
 <section class="section">
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
-  <div class="row">
-    <div class="col-lg-8 offset-lg-1">
-      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-1">
+        <h2 class="text-gradient-primary">¡Comienza con nosotros!</h2>
+        <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
+        <a href="contact.html" class="btn btn-lg btn-primary">Hablemos</a>
+      </div>
     </div>
   </div>
-</div>
 </section>
-<!-- /call to action -->
 
 <?php include 'footer.php'; ?>
 
-<!-- jQuery -->
+<!-- Scripts -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
 <script src="plugins/slick/slick.min.js"></script>
-<!-- venobox -->
 <script src="plugins/venobox/venobox.min.js"></script>
-<!-- shuffle -->
 <script src="plugins/shuffle/shuffle.min.js"></script>
-<!-- apear js -->
 <script src="plugins/counto/apear.js"></script>
-<!-- counter -->
 <script src="plugins/counto/counTo.js"></script>
-<!-- card slider -->
 <script src="plugins/card-slider/js/card-slider-min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places"></script>
 <script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
 <script src="js/script.js"></script>
 
 </body>
