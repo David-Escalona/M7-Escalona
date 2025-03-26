@@ -117,7 +117,7 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="/historia.php">Mi Historia</a></li>
-        <li class="nav-item"><a class="nav-link" href="/index.php">Asesorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="/indexx.php">Asesorías</a></li>
         <li class="nav-item"><a class="nav-link" href="/mentorias.php">Mentorías</a></li>
         <li class="nav-item"><a class="nav-link" href="/resultados.php">Proejctos</a></li>
         <li class="nav-item"><a class="nav-link" href="/noticias.php">Noticias</a></li>

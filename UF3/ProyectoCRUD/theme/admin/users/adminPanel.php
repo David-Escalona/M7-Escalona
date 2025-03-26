@@ -230,9 +230,9 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
                         <td><?= htmlspecialchars($item['descripcio']); ?></td>
                         <td><img src="<?= htmlspecialchars($item['thumbnail']); ?>" alt="Imagen"></td>
                         <td>
-                            <a href="../noticias/add-noticias.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
-                            <a href="../noticias/edit-noticias.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                            <a href="../noticias/delete-noticias.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
+                            <a href="../projectos/add-projectos.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
+                            <a href="../projectos/edit-projectos.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
+                            <a href="../projectos/delete-projectos.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
