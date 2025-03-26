@@ -139,11 +139,18 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
         .btn-danger:hover {
             background-color: #c82333;
         }
+        .mts{
+            margin-top: 100px;
+        }
     </style>
 </head>
 <body>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+
+<form action="logout.php" method="post">
+    <button type="submit" class="btn btn-danger mts">Cerrar Sesión</button>
+</form>
 
 
     <div class="container">
