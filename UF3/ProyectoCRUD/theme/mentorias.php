@@ -120,124 +120,180 @@
 </section>
 <!-- /video -->
 
-<!-- team -->
+<?php
+// Conexión a la base de datos
+$host = 'mysql-davidescalonagarcia.alwaysdata.net';
+$dname = 'davidescalonagarcia_base';
+$username = '393689';
+$password = 'Alumno_1516';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configurar PDO para que muestre errores
+} catch (PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
+    die();
+}
+
+// Consulta para obtener todos los usuarios
+$sql = "SELECT id, name, avatar FROM USERS"; // Eliminamos el LIMIT 4 para obtener todos los usuarios
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+// Obtener los resultados
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!-- Mostrar los usuarios -->
 <section class="section">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-center">
-        <h2>Our Team</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+        <h2>Lista de Clientes Satisfechos</h2>
+        <p>Esta gente decidio hacer un cambio en su vida apostando por nuestros metodos.</p>
         <div class="section-border"></div>
       </div>
     </div>
-    <div class="row no-gutters">
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-1.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
-            <i>Designer</i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-2.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
-            <i>Developer</i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-3.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
-            <i>Manager</i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-4.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center">
-            <h4>Devid Json</h4>
-            <i>CEO</i>
-          </div>
-        </div>
-      </div>
+
+    <!-- Contenedor para los usuarios -->
+    <div class="row no-gutters" id="user-container">
+      <?php if ($users): ?>
+          <?php foreach ($users as $user): ?>
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                  <div class="card hover-shadow border-0">
+                      <img src="<?= htmlspecialchars($user['avatar']); ?>" alt="team-member" class="card-img-top uniform-image">
+                      <div class="card-body text-center">
+                          <h4><a class="text-dark" href="team-single.php?id=<?= $user['id']; ?>"><?= htmlspecialchars($user['name']); ?></a></h4>
+                      </div>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+      <?php else: ?>
+          <p class="text-center col-12">No hay usuarios disponibles.</p>
+      <?php endif; ?>
     </div>
   </div>
 </section>
-<!-- /team -->
 
-<!-- testimonial-slider -->
+<!-- Estilos CSS para hacer que las imágenes sean del mismo tamaño -->
+<style>
+  .uniform-image {
+    width: 100%; /* Establecer el ancho de las imágenes a 100% */
+    height: 250px; /* Establecer la altura de las imágenes */
+    object-fit: cover; /* Hace que las imágenes se ajusten a estas dimensiones sin distorsionarse */
+    border-radius: 10px; /* Establece bordes redondeados */
+  }
+
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-border {
+    width: 60px;
+    height: 3px;
+    background-color: #000;
+    margin: 30px auto;
+  }
+</style>
+
+
+<!-- Estilos CSS para hacer que las imágenes sean del mismo tamaño -->
+<style>
+  .uniform-image {
+    width: 200px; /* Establecer el ancho de las imágenes */
+    height: 200px; /* Establecer la altura de las imágenes */
+    object-fit: cover; /* Hace que las imágenes se ajusten a estas dimensiones sin distorsionarse */
+    border-radius: 50%; /* Si quieres que las imágenes sean circulares */
+  }
+
+  /* Flecha para el botón de "Load More" */
+  #load-more {
+    margin-top: 20px;
+  }
+</style>
+
+
+<?php
+// Conexión a la base de datos
+$host = 'mysql-davidescalonagarcia.alwaysdata.net';
+$dname = 'davidescalonagarcia_base';
+$username = '393689';
+$password = 'Alumno_1516';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configurar PDO para que muestre errores
+} catch (PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
+    die();
+}
+
+// Consulta para obtener todos los testimonios
+$sql = "SELECT id, name, description, image FROM TESTIMONIS"; // Asegúrate de que la tabla 'TESTIMONIALS' tenga estos campos
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+// Obtener los resultados
+$testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!-- Testimonial Slider -->
 <section class="section bg-secondary">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="text-white mb-5">Our Client Testimonails</h2>
+        <h2 class="text-white mb-5">Testimonis de mis Clientes</h2>
       </div>
     </div>
     <div class="row bg-contain" data-background="images/banner/brush.png">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div id="slider" class="ui-card-slider bg-contain">
-          <div class="slide">
-            <div class="card text-center">
-              <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
-                <h4 class="text-secondary">Mellissa Christine</h4>
-                <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
-                  of them for my brand but is always better to have more options.”</p>
+          <?php foreach ($testimonials as $testimonial): ?>
+            <div class="slide">
+              <div class="card text-center">
+                <div class="card-body px-5 py-4">
+                  <!-- Imagen más pequeña -->
+                  <img src="<?= htmlspecialchars($testimonial['image']); ?>" alt="<?= htmlspecialchars($testimonial['name']); ?>" class="img-fluid rounded-circle mb-4" style="max-width: 80px; height: auto;">
+                  <h4 class="text-secondary"><?= htmlspecialchars($testimonial['name']); ?></h4>
+                  <p><?= htmlspecialchars($testimonial['description']); ?></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="slide">
-            <div class="card text-center">
-              <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
-                <h4 class="text-secondary">Mellissa Christine</h4>
-                <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
-                  of them for my brand but is always better to have more options.”</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card text-center">
-              <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
-                <h4 class="text-secondary">Mellissa Christine</h4>
-                <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
-                  of them for my brand but is always better to have more options.”</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card text-center">
-              <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
-                <h4 class="text-secondary">Mellissa Christine</h4>
-                <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
-                  of them for my brand but is always better to have more options.”</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card text-center">
-              <div class="card-body px-5 py-4">
-                <img src="images/testimonial/user-1.jpg" alt="user-1" class="img-fluid rounded-circle mb-4">
-                <h4 class="text-secondary">Mellissa Christine</h4>
-                <p>“Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
-                  of them for my brand but is always better to have more options.”</p>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Estilos CSS adicionales si es necesario -->
+<style>
+  .ui-card-slider .slide {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .ui-card-slider .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .ui-card-slider .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+
 <!-- /testimonial-slider -->
 
 <!-- call to action -->

@@ -142,8 +142,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-center">
-        <h2>Our Team</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+        <h2>Lista de Clientes Satisfechos</h2>
+        <p>Esta gente decidio hacer un cambio en su vida apostando por nuestros metodos.</p>
         <div class="section-border"></div>
       </div>
     </div>
