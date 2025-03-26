@@ -5,11 +5,10 @@ require_once('../../config.php');
 // Depuración: Verifica el contenido de la sesión
 // Esto solo debería estar presente durante la depuración para ver qué datos tiene la sesión
 // Puedes comentar o eliminar esta línea después de verificar.
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
-// VERIFICAR QUE EL USUARIO ESTÉ LOGUEADO Y QUE SEA ADMIN
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    echo 'Debes iniciar sesión como administrador para editar una noticia.';
+if (!isset($_SESSION['user_id'])) {
+    echo 'Debes iniciar sesión para agregar una noticia.';
     exit();
 }
 
@@ -59,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             $mensaje = 'Noticia actualizada correctamente.';
             $claseMensaje = "alert-success";
-            header("Location: ../admin/adminPanel.php"); // Redirigir después de la actualización
+            // Redirigir después de la actualización (asegurándote de que no haya salida antes)
+            header("Location: ../users/adminPanel.php");
             exit();
         } else {
             $mensaje = 'Error al actualizar la noticia.';
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="d-flex justify-content-between mt-4">
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                <a href="../admin/adminPanel.php" class="btn btn-secondary">Volver Atrás</a>
+                <a href="../users/adminPanel.php" class="btn btn-secondary">Volver Atrás</a>
             </div>
         </form>
     </div>

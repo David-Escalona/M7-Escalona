@@ -4,8 +4,8 @@ session_start();
 require_once('../../config.php');
 
 // VERIFICAR QUE EL USUARIO ESTÉ LOGUEADO Y QUE SEA ADMIN
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    echo 'Debes iniciar sesión como administrador para borrar una noticia.';
+if (!isset($_SESSION['user_id'])) {
+    echo 'Debes iniciar sesión para agregar una noticia.';
     exit();
 }
 
@@ -32,7 +32,7 @@ if (!$stmt) {
     if ($stmt->execute()) {
         $mensaje = 'Noticia eliminada correctamente.';
         $claseMensaje = "alert-success";
-        header("Location: ../admin/adminPanel.php"); // Redirigir después de eliminar
+        header("Location: ../users/adminPanel.php"); // Redirigir después de eliminar
         exit();
     } else {
         $mensaje = 'Error al eliminar la noticia.';
@@ -80,7 +80,7 @@ $mysqli->close();
                 <p>¿Estás seguro de que quieres eliminar esta noticia?</p>
             </div>
             <div class="d-flex justify-content-between mt-4">
-                <a href="../admin/adminPanel.php" class="btn btn-secondary">Cancelar</a>
+                <a href="../users/adminPanel.php" class="btn btn-secondary">Cancelar</a>
                 <a href="delete-news.php?id=<?= $news_id ?>" class="btn btn-danger">Eliminar</a>
             </div>
         </form>
