@@ -91,7 +91,7 @@
     
 <header class="navigation fixed-top navbar">
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <p class="navbar-brand mt-3" href="indexx.php">UNIVERSITY</p>
+    <p class="navbar-brand mt-3" href="index.php">UNIVERSITY</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -99,7 +99,7 @@
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="/historia.php">Mi Historia</a></li>
-        <li class="nav-item"><a class="nav-link" href="/indexx.php">Asesorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="/index.php">Asesorías</a></li>
         <li class="nav-item"><a class="nav-link" href="/mentorias.php">Mentorías</a></li>
         <li class="nav-item"><a class="nav-link" href="/resultados.php">Proyectos</a></li>
         <li class="nav-item"><a class="nav-link" href="/noticias.php">Noticias</a></li>

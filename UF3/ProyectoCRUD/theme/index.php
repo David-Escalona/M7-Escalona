@@ -128,8 +128,8 @@ try {
     die();
 }
 
-// Consulta para obtener los primeros 4 usuarios
-$sql = "SELECT id, name, avatar FROM USERS LIMIT 4"; // Asegúrate de que el nombre de la tabla y las columnas coincidan
+// Consulta para obtener todos los usuarios
+$sql = "SELECT id, name, avatar FROM USERS"; // Eliminamos el LIMIT 4 para obtener todos los usuarios
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
@@ -137,6 +137,7 @@ $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<!-- Mostrar los usuarios -->
 <section class="section">
   <div class="container">
     <div class="row">
@@ -146,27 +147,58 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="section-border"></div>
       </div>
     </div>
-    
+
     <!-- Contenedor para los usuarios -->
     <div class="row no-gutters" id="user-container">
-      <?php foreach ($users as $user): ?>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="<?= $user['avatar']; ?>" alt="team-member" class="card-img-top uniform-image">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.php?id=<?= $user['id']; ?>"><?= $user['name']; ?></a></h4>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-
-    <!-- Flecha para cargar más usuarios -->
-    <div class="text-center">
-      <button id="load-more" class="btn btn-primary">Load More</button>
+      <?php if ($users): ?>
+          <?php foreach ($users as $user): ?>
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                  <div class="card hover-shadow border-0">
+                      <img src="<?= htmlspecialchars($user['avatar']); ?>" alt="team-member" class="card-img-top uniform-image">
+                      <div class="card-body text-center">
+                          <h4><a class="text-dark" href="team-single.php?id=<?= $user['id']; ?>"><?= htmlspecialchars($user['name']); ?></a></h4>
+                      </div>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+      <?php else: ?>
+          <p class="text-center col-12">No hay usuarios disponibles.</p>
+      <?php endif; ?>
     </div>
   </div>
 </section>
+
+<!-- Estilos CSS para hacer que las imágenes sean del mismo tamaño -->
+<style>
+  .uniform-image {
+    width: 100%; /* Establecer el ancho de las imágenes a 100% */
+    height: 250px; /* Establecer la altura de las imágenes */
+    object-fit: cover; /* Hace que las imágenes se ajusten a estas dimensiones sin distorsionarse */
+    border-radius: 10px; /* Establece bordes redondeados */
+  }
+
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-border {
+    width: 60px;
+    height: 3px;
+    background-color: #000;
+    margin: 30px auto;
+  }
+</style>
+
 
 <!-- Estilos CSS para hacer que las imágenes sean del mismo tamaño -->
 <style>
