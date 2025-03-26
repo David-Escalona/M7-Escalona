@@ -113,7 +113,30 @@
 <?php include 'feature.php'; ?>
 <!-- /feature -->
 
-<!-- team -->
+<?php
+// Conexión a la base de datos
+$host = 'mysql-davidescalonagarcia.alwaysdata.net';
+$dname = 'davidescalonagarcia_base';
+$username = '393689';
+$password = 'Alumno_1516';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configurar PDO para que muestre errores
+} catch (PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
+    die();
+}
+
+// Consulta para obtener los primeros 4 usuarios
+$sql = "SELECT id, name, avatar FROM USERS LIMIT 4"; // Asegúrate de que el nombre de la tabla y las columnas coincidan
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+// Obtener los resultados
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <section class="section">
   <div class="container">
     <div class="row">
@@ -123,46 +146,46 @@
         <div class="section-border"></div>
       </div>
     </div>
-    <div class="row no-gutters">
+    
+    <!-- Contenedor para los usuarios -->
+    <div class="row no-gutters" id="user-container">
+      <?php foreach ($users as $user): ?>
       <div class="col-lg-3 col-sm-6">
         <div class="card hover-shadow">
-          <img src="images/team/member-1.jpg" alt="team-member" class="card-img-top">
+          <img src="<?= $user['avatar']; ?>" alt="team-member" class="card-img-top uniform-image">
           <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
-            <i>Designer</i>
+            <h4><a class="text-dark" href="team-single.php?id=<?= $user['id']; ?>"><?= $user['name']; ?></a></h4>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-2.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
-            <i>Developer</i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-3.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center position-relative zindex-1">
-            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
-            <i>Manager</i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <div class="card hover-shadow">
-          <img src="images/team/member-4.jpg" alt="team-member" class="card-img-top">
-          <div class="card-body text-center">
-            <h4>Devid Json</h4>
-            <i>CEO</i>
-          </div>
-        </div>
-      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Flecha para cargar más usuarios -->
+    <div class="text-center">
+      <button id="load-more" class="btn btn-primary">Load More</button>
     </div>
   </div>
 </section>
+
+<!-- Estilos CSS para hacer que las imágenes sean del mismo tamaño -->
+<style>
+  .uniform-image {
+    width: 200px; /* Establecer el ancho de las imágenes */
+    height: 200px; /* Establecer la altura de las imágenes */
+    object-fit: cover; /* Hace que las imágenes se ajusten a estas dimensiones sin distorsionarse */
+    border-radius: 50%; /* Si quieres que las imágenes sean circulares */
+  }
+
+  /* Flecha para el botón de "Load More" */
+  #load-more {
+    margin-top: 20px;
+  }
+</style>
+
+
+
+
 <!-- /team -->
 
 <!-- about -->
