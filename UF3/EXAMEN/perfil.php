@@ -57,9 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Actualizar los datos del usuario en la base de datos
-    $sql = "UPDATE Usuaris SET nom = ?, email = ?, contraseña = ?, rol = ?, imatge_perfil = ? WHERE id = ?";
+    $sql = "UPDATE Usuaris SET nom = ?, email = ?, imatge_perfil = ? WHERE id = ?";
     if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param("sssssi", $new_nom, $new_email, $new_imatge_perfil, $user_id);
+        $stmt->bind_param("sssi", $new_nom, $new_email, $new_imatge_perfil, $user_id);
         if ($stmt->execute()) {
             // Actualizar los datos en la sesión
             $_SESSION['user_nom'] = $new_nom;
