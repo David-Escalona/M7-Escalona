@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_nom'] = $user['nom'];
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_rol'] = $user['rol'];
-            $_SESSION['user_avatar'] = $user['avatar'];
+            $_SESSION['user_imatge_perfil'] = $user['imatge_perfil'];
 
             header('Location: indexiniciado.php');
             exit();

@@ -111,8 +111,8 @@
         <?php if (isset($_SESSION['user_id'])): ?>
           <div class="dropdown">
             <a href="#" class="dropbtn">
-              <img src="<?= $_SESSION['imatge_perfil'] ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-              <?= $_SESSION['user_name'] ?>
+              <img src="<?= $_SESSION['user_imatge_perfil'] ?>" alt="Avatar" style="width: 70px; height: 40px; border-radius: 0%;">
+              <?= $_SESSION['user_nom'] ?>
             </a>
             <div class="dropdown-content">
               <a href="perfil.php">Perfil</a>
