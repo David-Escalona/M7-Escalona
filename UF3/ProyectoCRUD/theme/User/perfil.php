@@ -27,8 +27,9 @@ if ($stmt = $mysqli->prepare($sql)) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Obtener los datos del formulario
     $new_name = $_POST['name'];
+    $new_surname = $_POST['surname']; // Nuevo apellido
     $new_email = $_POST['email'];
-    
+
     // Validar y manejar la foto de perfil
     $new_avatar = $user['avatar']; // Si no se cambia la foto, mantener la actual
 
@@ -57,14 +58,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Actualizar los datos del usuario en la base de datos
-    $sql = "UPDATE USERS SET name = ?, email = ?, avatar = ? WHERE id = ?";
+    $sql = "UPDATE USERS SET name = ?, sourname = ?, email = ?, avatar = ? WHERE id = ?";
     if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param("sssi", $new_name, $new_email, $new_avatar, $user_id);
+        $stmt->bind_param("ssssi", $new_name, $new_sourname, $new_email, $new_avatar, $user_id);
         if ($stmt->execute()) {
+            // Actualizar los datos en la sesión
             $_SESSION['user_name'] = $new_name;
+            $_SESSION['user_sourname'] = $new_sourname;
             $_SESSION['user_email'] = $new_email;
             $_SESSION['user_avatar'] = $new_avatar;
-            $success_message = "Perfil actualizado con éxito.";
+            // Redirigir a la página de inicio
+            header("Location: ../indiceIniciado.php");
+            exit();
         } else {
             $error_message = "Error al actualizar el perfil: " . $stmt->error;
         }
@@ -74,6 +79,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Eliminar las líneas duplicadas de meta viewport -->
+    <meta name="theme-name" content="agen" />
+    
+    <!-- ** Plugins Needed for the Project ** -->
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/slick/slick.css">
+    <link rel="stylesheet" href="../plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../plugins/venobox/venobox.css">
+    <link rel="stylesheet" href="../plugins/card-slider/css/style.css">
+
+    <!-- Main Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <title>Document</title>
+<!-- Incluir el header -->
+<?php include('../header.php'); ?>
 
 <!-- Estilos CSS -->
 <style>
@@ -217,11 +242,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" name="name" id="name" class="form-control" value="<?= $user['name'] ?>" required>
                 </div>
                 <div class="form-group">
+                    <label for="surname">Apellido</label>
+                    <input type="text" name="surname" id="surname" class="form-control" value="<?= $user['surname'] ?>" required>
+                </div>
+                <div class="form-group">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="email" class="form-control" value="<?= $user['email'] ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="avatar">Foto de perfil</label>
+                    <!-- Mostrar la imagen actual del avatar -->
+                    <div>
+                        <img src="<?= $user['avatar'] ?>" alt="Avatar actual" class="profile-avatar">
+                    </div>
                     <input type="file" name="avatar" id="avatar" class="form-control">
                 </div>
                 <div class="form-group">
@@ -231,3 +264,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+
+<!-- Scripts -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/venobox/venobox.min.js"></script>
+<script src="plugins/shuffle/shuffle.min.js"></script>
+<script src="plugins/counto/apear.js"></script>
+<script src="plugins/counto/counTo.js"></script>
+<script src="plugins/card-slider/js/card-slider-min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="plugins/google-map/gmap.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>
