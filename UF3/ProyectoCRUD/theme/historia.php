@@ -54,104 +54,114 @@
 </section>
 <!-- /page-title -->
 
-<!-- project -->
+<!-- Project Section -->
 <section>
   <div class="container-fluid px-0">
-    <div class="row no-gutters shuffle-wrapper">
-      <div class="col-lg-4 col-md-6 shuffle-item">
+    <div class="grid-container">
+      <!-- Primera imagen -->
+      <div class="grid-item">
         <div class="project-item">
-          <img src="images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
+          <div class="image-container">
+            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2160105627/settings_images/a4ed3d8-c127-2802-6b1b-6b2cb10fc3_image.png" alt="project-image">
+          </div>
           <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+            <a href="#" class="text-white h2">2016</a>
+            <a href="#"><i class="ti-link icon-lg text-white"></i></a>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
+      <!-- Segunda imagen -->
+      <div class="grid-item">
         <div class="project-item">
-          <img src="images/project/project-2.jpg" alt="project-image" class="img-fluid w-100">
+          <div class="image-container">
+            <img src="https://estaticosgn-cdn.deia.eus/clip/76ae49e2-af7f-4679-b383-ad7282afa017_16-9-aspect-ratio_default_0.jpg" alt="project-image">
+          </div>
           <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+            <a href="#" class="text-white h2">2020</a>
+            <a href="#"><i class="ti-link icon-lg text-white"></i></a>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
+      <!-- Tercera imagen (abajo, centrada) -->
+      <div class="grid-item full-width">
         <div class="project-item">
-          <img src="images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+          <div class="image-container">
+            <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2160105627/settings_images/7c271a-d25b-516e-6c4f-3d27bd4c8e_image.png" alt="project-image">
           </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-4.jpg" alt="project-image" class="img-fluid w-100">
           <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-5.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-6.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-7.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 shuffle-item">
-        <div class="project-item">
-          <img src="images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
-          <div class="project-hover bg-secondary px-4 py-3">
-            <a href="#" class="text-white h4">Project title</a>
-            <a href="#"><i class="ti-link icon-xs text-white"></i></a>
+            <a href="#" class="text-white h2">2025</a>
+            <a href="#"><i class="ti-link icon-lg text-white"></i></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- /project -->
+
+<!-- Estilos para imágenes grandes y distribución en 2 arriba y 1 abajo -->
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .full-width {
+    grid-column: span 2; /* Hace que la última imagen ocupe toda la fila */
+  }
+
+  .image-container {
+    width: 100%;
+    height: 550px; /* Más grande */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin deformación */
+  }
+
+  .project-hover {
+    text-align: center;
+  }
+
+  .project-hover a {
+    font-size: 2rem; /* Títulos más grandes */
+  }
+
+  .icon-lg {
+    font-size: 2rem; /* Íconos más visibles */
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+      grid-column: span 1;
+    }
+  }
+</style>
+
 
 <!-- call to action -->
-<section class="section pb-0">
+<section class="section">
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
-      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+      <h2 class="text-gradient-primary">Contacta conmigo!</h2>
+      <p class="h4 font-weight-bold text-white mb-4">Atenderemos cualquier consulta solicitada.</p>
+      <a href="contacto.php" class="btn btn-lg btn-primary">Hablemos</a>
     </div>
   </div>
 </div>
@@ -181,66 +191,7 @@
 </section>
 <!-- /clients -->
 
-<!-- footer -->
-<footer class="bg-secondary position-relative">
-  <img src="images/backgrounds/map.png" class="img-fluid overlay-image" alt="">
-  <div class="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-3 col-6">
-          <h4 class="text-white mb-5">About</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-light d-block mb-3">Service</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Conatact</a></li>
-            <li><a href="#" class="text-light d-block mb-3">About us</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Blog</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Support</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-6">
-          <h4 class="text-white mb-5">Company</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-light d-block mb-3">Service</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Conatact</a></li>
-            <li><a href="#" class="text-light d-block mb-3">About us</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Blog</a></li>
-            <li><a href="#" class="text-light d-block mb-3">Support</a></li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <div class="bg-white p-4">
-            <h3>Contact us</h3>
-            <form action="#">
-              <input type="text" id="name" name="name" class="form-control mb-4 px-0" placeholder="Full name">
-              <input type="text" id="name" name="name" class="form-control mb-4 px-0" placeholder="Email address">
-              <textarea name="message" id="message" class="form-control mb-4 px-0" placeholder="Message"></textarea>
-              <button class="btn btn-primary" type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="pb-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-left">
-          <p class="text-light mb-0">Copyright &copy; 2019 a theme by <a class="text-gradient-primary" href="https://themefisher.com">themefisher.com</a>
-          </p>
-        </div>
-        <div class="col-md-6">
-          <ul class="list-inline text-md-right text-center">
-            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-facebook"></i></a></li>
-            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-instagram"></i></a></li>
-            <li class="list-inline-item"><a class="d-block p-3 text-white" href="#"><i class="ti-github"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- /footer -->
+<?php include 'footer.php'; ?>
 
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>

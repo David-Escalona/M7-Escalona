@@ -109,13 +109,7 @@
         <div class="dropdown">
           <a href="#" class="dropbtn">Cursos</a>
           <div class="dropdown-content">
-            <a href="planes.php">Escoge tu Plan</a>
-            <a href="#">Tu1Centimo</a>
-            <a href="#">Tu1Euro</a>
-            <a href="#">Tu1Billete</a>
-            <a href="#">Tu1Millón</a>
-            <a href="#">Tu1Billón</a>
-            <a href="#">Tu1S</a>
+            <a href="planes.php">PROXIMAMENTE</a>
           </div>
         </div>
         
