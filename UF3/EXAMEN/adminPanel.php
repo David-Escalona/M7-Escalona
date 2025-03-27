@@ -209,9 +209,9 @@ $reserves = ($resultReserves) ? $resultReserves->fetch_all(MYSQLI_ASSOC) : [];
                         <td><img src="<?= htmlspecialchars($item['imatge']); ?>" alt="Imagen"></td>
                         <td><?= htmlspecialchars($item['disponible']); ?></td>
                         <td>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
+                            <a href="añadirVehiculos.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
+                            <a href="editarVehiculos.php?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
+                            <a href="borrarVehiculos.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

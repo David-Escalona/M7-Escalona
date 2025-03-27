@@ -12,6 +12,26 @@ if ($_SESSION['user_rol'] !== 'admin') {
 $mensaje = "";
 $claseMensaje = "";
 
+// COMPROBAR SI SE HA RECIBIDO UN ID PARA EDITAR
+if (!isset($_GET['id'])) {
+    echo "ID de proyecto no proporcionado.";
+    exit();
+}
+
+$id = $_GET['id'];
+
+// OBTENER DATOS DEL PROYECTO
+$stmt = $mysqli->prepare("SELECT model, categoria, preu_dia, imatge, disponible FROM Vehicles WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$project = $result->fetch_assoc();
+
+if (!$project) {
+    echo "Proyecto no encontrado.";
+    exit();
+}
+
 // COMPROBAR QUE EL FORMULARIO HA SIDO ENVIADO
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // RECOGER LOS DATOS DEL FORMULARIO
@@ -20,11 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preu_dia = $_POST['preu_dia'];
     $imatge = $_POST['imatge'];
     $disponible = $_POST['disponible'];
-    
 
-    // PREPARAR LA CONSULTA PARA INSERTAR EL NUEVO PROYECTO
+    // PREPARAR LA CONSULTA PARA ACTUALIZAR
     $stmt = $mysqli->prepare(
-        "INSERT INTO Vehicles (model, categoria, preu_dia, imatge, disponible) VALUES (?, ?, ?, ?, ?)"
+        "UPDATE Vehicles SET model = ?, categoria = ?, preu_dia = ?, imatge = ?, disponible = ?  WHERE id = ?"
     );
 
     if (!$stmt) {
@@ -32,15 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $claseMensaje = "alert-danger";
     } else {
         // BINDEAR LOS PARAMETROS
-        $stmt->bind_param('sssss', $model, $categoria, $preu_dia, $imatge, $disponible);
+        $stmt->bind_param('sssssi', $model, $categoria, $preu_dia, $imatge, $disponible, $id);
 
         // EJECUTAR LA CONSULTA
         if ($stmt->execute()) {
-            // Redirigir a adminPanel.php después de agregar el proyecto
-            $mensaje = 'Proyecto agregado con éxito.';
-            $claseMensaje = "alert-success";
+            // Redirigir a adminPanel.php después de actualizar el proyecto
+            header("Location: adminPanel.php");
+            exit();
         } else {
-            $mensaje = 'Error al agregar el proyecto.';
+            $mensaje = 'Error al actualizar el proyecto.';
             $claseMensaje = "alert-danger";
         }
         $stmt->close();
@@ -54,9 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Vehiculo</title>
+    <title>Editar Vehiculo</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
@@ -75,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     
     <div class="container">
-        <h1 class="text-center">Agregar Vehiculo</h1>
+        <h1 class="text-center">Editar Vehiculo</h1>
 
         <?php if (!empty($mensaje)): ?>
             <div class="alert <?= $claseMensaje; ?>"><?= $mensaje; ?></div>
@@ -84,26 +103,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="" method="POST">
             <div class="form-group">
                 <label for="model">Modelo:</label>
-                <input type="text" class="form-control" id="model" name="model" required>
+                <input type="text" class="form-control" id="model" name="model" value="<?= htmlspecialchars($project['model']) ?>" required>
             </div>
             <div class="form-group">
-                <label for="categoria">Categoria</label>
-                <input type="text" class="form-control" id="categoria" name="categoria" required>
+                <label for="categoria">Categoria:</label>
+                <input type="text" class="form-control" id="categoria" name="categoria" value="<?= htmlspecialchars($project['categoria']) ?>" required>
             </div>
             <div class="form-group">
                 <label for="preu_dia">Precio:</label>
-                <textarea class="form-control" id="preu_dia" name="preu_dia" required></textarea>
+                <textarea class="form-control" id="preu_dia" name="preu_dia" required><?= htmlspecialchars($project['preu_dia']) ?></textarea>
             </div>
             <div class="form-group">
                 <label for="imatge">Imagen</label>
-                <input type="text" class="form-control" id="imatge" name="imatge" required>
+                <input type="text" class="form-control" id="imatge" name="imatge" value="<?= htmlspecialchars($project['imatge']) ?>" required>
             </div>
             <div class="form-group">
                 <label for="disponible">Disponibilidad</label>
-                <input type="text" class="form-control" id="disponible" name="disponible" required>
+                <input type="text" class="form-control" id="disponible" name="disponible" value="<?= htmlspecialchars($project['disponible']) ?>" required>
             </div>
             <div class="d-flex justify-content-between mt-4">
-                <button type="submit" class="btn btn-primary">Agregar Proyecto</button>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 <a href="adminPanel.php" class="btn btn-secondary">Volver Atrás</a>
             </div>
         </form>
