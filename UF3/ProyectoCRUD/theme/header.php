@@ -120,10 +120,10 @@
               <?= $_SESSION['user_name'] ?>
             </a>
             <div class="dropdown-content">
-              <a href="/User/perfil.php">Perfil</a>
+              <a href="User/perfil.php">Perfil</a>
               <?php if ($_SESSION['user_rol'] === 'admin'): ?>
                 <!-- Ajustamos la ruta para el admin panel -->
-                <a href="/admin/users/adminPanel.php">Panel Admin</a>
+                <a href="admin/users/adminPanel.php">Panel Admin</a>
               <?php endif; ?>
               <!-- Ruta corregida para cerrar sesión -->
               <a href="logout.php" class="text-danger">Cerrar Sesión</a>
