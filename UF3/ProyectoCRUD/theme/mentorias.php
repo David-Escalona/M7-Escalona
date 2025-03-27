@@ -111,9 +111,6 @@
           <div class="text-center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/blyUqDOCI8U?si=-KxZ8at6Tn5jVgq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <i class="ti-control-play icon-sm icon-box-sm rounded-circle text-white bg-gradient-primary d-block content-center"></i>
-    </a>
-</div>
-
           </a>
         </div>
       </div>

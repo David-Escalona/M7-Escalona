@@ -83,7 +83,7 @@
         <?php foreach ($news as $item): ?>
         <div class="col-lg-4 col-md-6 mb-4">
           <article class="card">
-            <img src="images/blog/<?php echo $item['thumbnail']; ?>" alt="post-thumb" class="card-img-top mb-2">
+            <img src="<?php echo $item['thumbnail']; ?>" alt="post-thumb" class="card-img-top mb-2">
             <div class="card-body p-0">
               <time><?php echo date("F j, Y", strtotime($item['newdate'])); ?></time>
               <a href="blog-single.php?id=<?php echo $item['id']; ?>" class="h4 card-title d-block my-3 text-dark hover-text-underline">

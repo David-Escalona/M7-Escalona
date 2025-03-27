@@ -149,7 +149,7 @@ while ($row = $result->fetch_assoc()) {
           <?php foreach ($testimonios as $item): ?>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="images/<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo $item['image']; ?>">
+                <img src="<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo $item['image']; ?>">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $item['name'] . ' ' . $item['sourname']; ?></h5>
                   <span class="text-muted"><?php echo date("F j, Y", strtotime($item['data'])); ?></span>
