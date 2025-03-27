@@ -36,6 +36,61 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-top: 50px;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .full-width {
+    grid-column: span 2; /* Hace que la última imagen ocupe toda la fila */
+  }
+
+  .image-container {
+    width: 100%;
+    height: 550px; /* Más grande */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin deformación */
+  }
+
+  .project-hover {
+    text-align: center;
+  }
+
+  .project-hover a {
+    font-size: 2rem; /* Títulos más grandes */
+  }
+
+  .icon-lg {
+    font-size: 2rem; /* Íconos más visibles */
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+      grid-column: span 1;
+    }
+  }
+</style>
+
 </head>
 
 <body>
@@ -105,19 +160,23 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="overlay-secondary video-player">
+        <div class="overlay-secondary video-player" style="position: relative;">
+          <!-- Imagen de miniatura -->
           <img src="https://s1.eestatic.com/2023/07/14/actualidad/778932810_234717758_1706x960.jpg" alt="video-thumb" class="img-fluid w-100">
-          <a class="play-icon">
-          <div class="text-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/blyUqDOCI8U?si=-KxZ8at6Tn5jVgq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <i class="ti-control-play icon-sm icon-box-sm rounded-circle text-white bg-gradient-primary d-block content-center"></i>
-          </a>
+          
+          <!-- Botón de reproducción centrado -->
+          <div class="text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/blyUqDOCI8U?si=0-Tj_CRr3bx800Vx">
+              <i class="text-center icon-sm icon-box rounded-circle text-white bg-gradient-primary d-block ti-control-play"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- /video -->
+
 
 <?php
 // Conexión a la base de datos
