@@ -47,7 +47,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="display-1 text-white font-weight-bold font-primary">About Agen</h1>
+        <h1 class="display-1 text-white font-weight-bold font-primary">Mentorias</h1>
       </div>
     </div>
   </div>
@@ -59,38 +59,38 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mb-4 mb-lg-0">
-        <img src="images/about/about-us.png" alt="about" class="img-fluid">
+        <img src="https://s1.abcstatics.com/abc/www/multimedia/sociedad/2024/06/28/llados-princ-U25102587720TsY-1024x512@diario_abc.JPG" alt="about" class="img-fluid">
       </div>
       <div class="col-md-6 col-lg-5">
         <div class="progress-block">
-          <h6 class="text-uppercase">HTML5 Expertise</h6>
+          <h6 class="text-uppercase">Dinero</h6>
           <div class="progress">
-            <div class="progress-bar" data-percent="30">
-              <span class="skill-number text-dark font-weight-bold"><span class="count">85</span>%</span>
+            <div class="progress-bar" data-percent="100">
+              <span class="skill-number text-dark font-weight-bold"><span class="count">100</span>%</span>
             </div>
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">jQuery Expertise</h6>
+          <h6 class="text-uppercase">Estabilidad</h6>
           <div class="progress">
-            <div class="progress-bar" data-percent="95">
-              <span class="skill-number text-dark font-weight-bold"><span class="count">95</span>%</span>
+            <div class="progress-bar" data-percent="100">
+              <span class="skill-number text-dark font-weight-bold"><span class="count">100</span>%</span>
             </div>
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">PHP Expertise</h6>
+          <h6 class="text-uppercase">Mileuristas</h6>
           <div class="progress">
-            <div class="progress-bar" data-percent="79">
-              <span class="skill-number text-dark font-weight-bold"><span class="count">79</span>%</span>
+            <div class="progress-bar" data-percent="0">
+              <span class="skill-number text-dark font-weight-bold"><span class="count">0</span>%</span>
             </div>
           </div>
         </div>
         <div class="progress-block">
-          <h6 class="text-uppercase">User Interface Expertise</h6>
+          <h6 class="text-uppercase">Vicios</h6>
           <div class="progress">
-            <div class="progress-bar" data-percent="90">
-              <span class="skill-number text-dark font-weight-bold"><span class="count">90</span>%</span>
+            <div class="progress-bar" data-percent="0">
+              <span class="skill-number text-dark font-weight-bold"><span class="count">0</span>%</span>
             </div>
           </div>
         </div>
@@ -106,12 +106,14 @@
     <div class="row">
       <div class="col-12">
         <div class="overlay-secondary video-player">
-          <img src="images/about/video-thumb.jpg" alt="video-thumb" class="img-fluid w-100">
+          <img src="https://s1.eestatic.com/2023/07/14/actualidad/778932810_234717758_1706x960.jpg" alt="video-thumb" class="img-fluid w-100">
           <a class="play-icon">
-            <i class="text-center icon-sm icon-box-sm rounded-circle text-white bg-gradient-primary d-block ti-control-play content-center"
-              data-video="https://www.youtube.com/embed/jrkvirglgaQ?autoplay=1">
-              <div class="ripple"></div>
-            </i>
+          <div class="text-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/blyUqDOCI8U?si=-KxZ8at6Tn5jVgq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <i class="ti-control-play icon-sm icon-box-sm rounded-circle text-white bg-gradient-primary d-block content-center"></i>
+    </a>
+</div>
+
           </a>
         </div>
       </div>
@@ -301,9 +303,9 @@ $testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
   <div class="row">
     <div class="col-lg-8 offset-lg-1">
-      <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-      <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
-      <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
+      <h2 class="text-gradient-primary">Contacta conmigo!</h2>
+      <p class="h4 font-weight-bold text-white mb-4">Atenderemos cualquier consulta solicitada.</p>
+      <a href="contacto.php" class="btn btn-lg btn-primary">Hablemos</a>
     </div>
   </div>
 </div>
