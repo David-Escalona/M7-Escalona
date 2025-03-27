@@ -4,6 +4,6 @@ session_unset();
 session_destroy();
 
 // Redirigir a la raíz del sitio, independientemente de la ruta actual
-header('Location: historia.php');
+header('Location: ../../historia.php');
 exit();
 ?>
