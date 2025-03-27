@@ -98,13 +98,13 @@
     </button>
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="../../historia.php">Mi Historia</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../index.php">Asesorías</a></li>
-        <li class="nav-item"><a class="nav-link" href="../../mentorias.php">Mentorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="historia.php">Mi Historia</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.php">Asesorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="mentorias.php">Mentorías</a></li>
         <li class="nav-item"><a class="nav-link" href="resultados.php">Resultados</a></li>
-        <li class="nav-item"><a class="nav-link" href="/noticias.php">Noticias</a></li>
-        <li class="nav-item"><a class="nav-link" href="/portfolio.php">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="../contacto.php">Contáctame</a></li>
+        <li class="nav-item"><a class="nav-link" href="noticias.php">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.php">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.php">Contáctame</a></li>
         
         <div class="dropdown">
           <a href="#" class="dropbtn">Cursos</a>
