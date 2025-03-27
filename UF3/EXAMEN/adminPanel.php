@@ -241,9 +241,9 @@ $reserves = ($resultReserves) ? $resultReserves->fetch_all(MYSQLI_ASSOC) : [];
                         <td><?= htmlspecialchars($item['estat']); ?></td>
                         <td><?= htmlspecialchars($item['preu_total']); ?></td>
                         <td>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-warning">Editar</a>
-                            <a href="?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
+                            <a href="añadirReserva.php?id=<?= $item['id'] ?>" class="btn btn-info">Añadir</a>
+                            <a href="?id=<?= $item['id'] ?>" class="btn btn-warning">PROXIMAMENTE</a>
+                            <a href="borrarReserva.php?id=<?= $item['id'] ?>" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
