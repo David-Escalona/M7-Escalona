@@ -239,11 +239,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" class="form-control" value="<?= $user['name'] ?>" required>
+                    <input type="text" name="name" id="name" class="form-control" value="<?= $user['name'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="surname">Apellido</label>
-                    <input type="text" name="surname" id="surname" class="form-control" value="<?= $user['surname'] ?>" required>
+                    <input type="text" name="surname" id="surname" class="form-control" value="<?= $user['surname'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>

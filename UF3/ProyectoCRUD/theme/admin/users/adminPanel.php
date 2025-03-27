@@ -146,7 +146,7 @@ $proyectos = ($resultProyectos) ? $resultProyectos->fetch_all(MYSQLI_ASSOC) : []
 </head>
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . 'header.php'; ?>
 
 <form action="logout.php" method="post">
     <button type="submit" class="btn btn-danger mts">Cerrar Sesión</button>
