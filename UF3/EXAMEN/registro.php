@@ -6,11 +6,11 @@ $mensaje = ""; // Variable para mostrar el mensaje después del registro
 
 // COMPROBAR SI EL FORMULARIO HA SIDO ENVIADO
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nom = $_POST['NAME']; // Corregido para coincidir con el formulario
+    $nom = $_POST['NAME']; 
     $email = $_POST['email'];
-    $contraseña = $_POST['PASSWORD']; // Corregido para coincidir con el formulario
+    $contraseña = $_POST['PASSWORD']; 
     $rol = $_POST['rol'];
-    $imatge_perfil = $_POST['avatar']; // Corregido para coincidir con el formulario
+    $imatge_perfil = $_POST['avatar']; 
 
     // CIFRAR LA CONTRASEÑA
     $passwordHashed = password_hash($contraseña, PASSWORD_DEFAULT);

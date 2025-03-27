@@ -7,6 +7,14 @@
     <title>Examen</title>
 
     <style>
+
+    body {
+      background-image: url(https://img.freepik.com/fotos-premium/fondo-borroso-negro-gris-oscuro-tiene-poco-fondo-suave-claro-abstracto-diseno-grafico-presentacion-papel-tapiz_532332-545.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
   .uniform-image {
     width: 100%; /* Establecer el ancho de las imágenes a 100% */
     height: 300px; /* Establecer la altura de las imágenes */
@@ -109,6 +117,11 @@
     background-color: #000;
     margin: 30px auto;
   }
+  .df{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+  }
 
   </style>
 </head>
@@ -116,7 +129,7 @@
       
     <?php include 'header.php'; ?>
 
-    <h1 class="margen">Usuarios Registrados</h1>
+    <h1 class="margen mb-4 text-white">Usuarios Registrados</h1>
 
     <?php
 // Conexión a la base de datos
@@ -161,7 +174,7 @@ $usuaris = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </section>
 
-        <h1 class="margen">Vehiculos Disponibles</h1>
+        <h1 class="margen text-white">Vehiculos Disponibles</h1>
 
         <?php
 // Conexión a la base de datos
@@ -218,7 +231,7 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </section>
 
-<h1 class="margen">Reservas Actuales</h1>
+<h1 class="margen text-white">Reservas Actuales</h1>
 
 <?php
 // Conexión a la base de datos
@@ -236,7 +249,7 @@ try {
 }
 
 // Consulta para obtener todos los usuarios
-$sql = "SELECT id, data_inici, estat FROM Reserves"; // Eliminamos el LIMIT 4 para obtener todos los usuarios
+$sql = "SELECT id, data_inici, data_fi, estat, preu_total, id_usuari, id_vehicle FROM Reserves"; // Eliminamos el LIMIT 4 para obtener todos los usuarios
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
@@ -257,8 +270,8 @@ $reserves = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="row no-gutters" id="user-container">
       <?php if ($reserves): ?>
           <?php foreach ($reserves as $reserve): ?>
-              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                  <div class="card hover-shadow border-0">
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-4 df">
+                  <div class="card hover-shadow border-0 p-5">
                   <h4>Inicio del tramite: <a class="text-dark"<?= $reserve['id']; ?>"><?= htmlspecialchars($reserve['data_inici']); ?></a></h4>
                   <h4>Final del tramite: <a class="text-dark"<?= $reserve['id']; ?>"><?= htmlspecialchars($reserve['data_fi']); ?></a></h4>
                   <h4>Precio del vehiculo: <a class="text-dark"<?= $reserve['id']; ?>"><?= htmlspecialchars($reserve['preu_total']); ?></a></h4>

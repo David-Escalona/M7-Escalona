@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="plugins/venobox/venobox.css">
     <link rel="stylesheet" href="plugins/card-slider/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     
     <!-- Main Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -19,7 +22,7 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Comfortaa;
             margin: 0;
             padding: 0;
         }
@@ -108,14 +111,14 @@
         <?php if (isset($_SESSION['user_id'])): ?>
           <div class="dropdown">
             <a href="#" class="dropbtn">
-              <img src="<?= $_SESSION['user_avatar'] ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+              <img src="<?= $_SESSION['imatge_perfil'] ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
               <?= $_SESSION['user_name'] ?>
             </a>
             <div class="dropdown-content">
-              <a href="/User/perfil.php">Perfil</a>
+              <a href="perfil.php">Perfil</a>
               <?php if ($_SESSION['user_rol'] === 'admin'): ?>
                 <!-- Ajustamos la ruta para el admin panel -->
-                <a href="/admin/users/adminPanel.php">Panel Admin</a>
+                <a href="adminPanel.php">Panel Admin</a>
               <?php endif; ?>
               <!-- Ruta corregida para cerrar sesión -->
               <a href="logout.php" class="text-danger">Cerrar Sesión</a>
